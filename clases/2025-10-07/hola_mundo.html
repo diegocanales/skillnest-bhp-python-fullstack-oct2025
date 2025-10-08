@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Esto se ve en la </title>
+  </head>
+  <!-- Inicio body -->
+  <body>
+    <h1>Ejemplos con listas y tablas</h1>
+    <!-- este es un comentario -->
+    <h2>Listas</h2>
+    <h3>Listas desornadas</h3>
+    <ul>
+      <li><strong>Natación</strong></li>
+      <li>Esquí</li>
+      <li>Esquí</li>
+    </ul>
+    <h3>Listas ordenadas</h3>
+    <ol>
+      <li>Minecraft</li>
+      <li>Fornite</li>
+    </ol>
+
+    <h2>Tabla</h2>
+    <h3>Mis series favoritas</h3>
+    <table>
+      <tr>
+        <th>Serie</th>
+        <th>Plataforma</th>
+        <th>Trama</th>
+      </tr>
+      <tr>
+        <td>Stranger Things</td>
+        <td>Netflix</td>
+        <td>Aventuras sobrenaturales</td>
+      </tr>
+      <tr>
+        <td>The Madalorian</td>
+        <td>Disney+</td>
+        <td>Pistolero en Star Wars</td>
+      </tr>
+    </table>
+
+    <h2>Ejemplo de un párrafo</h2>
+    <p>
+      Este es un <strong>párrafo</strong> y esta palabra es <em>cursiva</em>
+    </p>
+    <h2>Ejemplo Enlaces</h2>p
+    <a href="https://www.google.cl">Este es un link a Google</a>
+    <!-- Fin body -->
+    <p>H<sub>2</sub>O</p>
+
+    <h2>Formularios</h2>
+
+    <form action="/procesar" method="POST">
+        <!-- Campos del formulario aquí -->
+        
+        <div>
+            <label for="nombre">Nombre: </label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+        </div>
+
+        <div>
+            <label for="year">Año: </label>
+            <input type="number" name="year">
+        </div>
+        <!-- Los type de los inputs pueden ser: text, email, password, date, color -->
+
+        <div>
+            <label>Radio button</label>
+            <input type="radio" id="masc" name="genero" value="masculino">
+            <label for="masc">Masculino</label>
+            <input type="radio" id="fem" name="genero" value="femenino">
+            <label for="fem">Femenino</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="terminos" name="terminos" checked>
+            <label for="terminos">Acepto los términos y condiciones</label>
+        </div>
+
+        <div>
+            <input type="checkbox" id="newsletter" name="newsletter">
+            <label for="newsletter">Deseo recibir el boletín</label>
+        </div>
+
+        <div>
+            <label for="pais">País: </label>
+            <select id="pais" name="pais">
+                <option value="">Selecciona tu país</option>
+                <option value="chile">Chile</option>
+                <option value="argentina">Argentina</option>
+                <option value="peru">Perú</option>
+                <option value="mexico">México</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="comentario">Comentario: </label>
+            <textarea id="comentario" name="comentario" rows="5" cols="40">
+            </textarea>
+        </div>
+
+        <input type="submit" value="Enviar">
+    </form>
+    <html></html>
+  </body>
+</html>
