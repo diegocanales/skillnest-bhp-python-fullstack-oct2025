@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo: Columnas con inline-block (El Problema)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .contenedor-ejemplo {
+            background-color: white;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #2196F3;
+            border-bottom: 2px solid #2196F3;
+            padding-bottom: 10px;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #d63384;
+            font-family: 'Courier New', monospace;
+        }
+
+        .info-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .error-box {
+            background-color: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        /* ===== EJEMPLO 1: Block (por defecto) ===== */
+        .container-block {
+            background-color: #e0e0e0;
+            padding: 10px;
+            margin: 20px 0;
+        }
+
+        .columna-block {
+            width: 200px;
+            background-color: lightblue;
+            padding: 20px;
+            /* display: block; ← Por defecto */
+        }
+
+        /* ===== EJEMPLO 2: inline-block (con espacios fantasma) ===== */
+        .container-inline-block {
+            background-color: #e0e0e0;
+            padding: 10px;
+            margin: 20px 0;
+        }
+
+        .columna-inline-block {
+            display: inline-block;
+            width: 200px;
+            background-color: lightblue;
+            padding: 20px;
+            vertical-align: top;  /* Importante para alinear arriba */
+        }
+
+        /* ===== EJEMPLO 3: inline-block con font-size 0 (workaround) ===== */
+        .container-fix {
+            background-color: #e0e0e0;
+            padding: 10px;
+            margin: 20px 0;
+            font-size: 0;  /* Elimina los espacios */
+        }
+
+        .columna-fix {
+            display: inline-block;
+            width: 200px;
+            background-color: lightblue;
+            padding: 20px;
+            vertical-align: top;
+            font-size: 16px;  /* Restaurar tamaño de fuente */
+        }
+
+        /* Resaltador de espacios */
+        .espacio-visible {
+            background-color: #ff9800;
+            color: white;
+            padding: 2px 4px;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .demo-area {
+            border: 2px solid #ddd;
+            padding: 10px;
+            margin: 15px 0;
+            background-color: #fafafa;
+        }
+    </style>
+</head>
+<body>
+    <h1>🟦 Display: inline-block - El Problema de los Espacios</h1>
+
+    <div class="contenedor-ejemplo">
+        <h2>🎯 El Problema</h2>
+        <p>Quiero crear 3 columnas lado a lado, cada una de 200px de ancho.</p>
+        
+        <div class="error-box">
+            <strong>❌ Problema:</strong> Con <code>display: block</code> (por defecto), las columnas se apilan verticalmente.
+        </div>
+    </div>
+
+    <!-- EJEMPLO 1: Block -->
+    <div class="contenedor-ejemplo">
+        <h2>Intento 1: Display Block (por defecto)</h2>
+        
+        <div class="demo-area">
+            <div class="container-block">
+                <div class="columna-block">Columna 1</div>
+                <div class="columna-block">Columna 2</div>
+                <div class="columna-block">Columna 3</div>
+            </div>
+        </div>
+
+        <pre><code>.columna {
+    width: 200px;
+    background-color: lightblue;
+    padding: 20px;
+    /* display: block; ← Por defecto */
+}</code></pre>
+
+        <div class="error-box">
+            <strong>❌ Resultado:</strong> Las columnas se apilan una debajo de otra. Los elementos <code>block</code> siempre ocupan todo el ancho disponible y empiezan en una nueva línea.
+        </div>
+    </div>
+
+    <!-- EJEMPLO 2: inline-block con espacios -->
+    <div class="contenedor-ejemplo">
+        <h2>Intento 2: Display inline-block</h2>
+        
+        <div class="demo-area">
+            <div class="container-inline-block">
+                <div class="columna-inline-block">Columna 1</div>
+                <div class="columna-inline-block">Columna 2</div>
+                <div class="columna-inline-block">Columna 3</div>
+            </div>
+        </div>
+
+        <pre><code>.columna {
+    display: inline-block;
+    width: 200px;
+    background-color: lightblue;
+    padding: 20px;
+    vertical-align: top;
+}</code></pre>
+
+        <div class="info-box">
+            <strong>⚠️ Resultado:</strong> Las columnas están en línea, pero... ¡hay espacios entre ellas!
+            <br><br>
+            <strong>¿Por qué?</strong> El navegador renderiza los espacios en blanco del HTML (saltos de línea, espacios, tabs) como espacios reales cuando usas <code>inline-block</code>.
+        </div>
+
+        <h3>El HTML tiene espacios invisibles:</h3>
+        <pre><code>&lt;div class="columna"&gt;Columna 1&lt;/div&gt;
+<span class="espacio-visible">← ESPACIO</span>
+&lt;div class="columna"&gt;Columna 2&lt;/div&gt;
+<span class="espacio-visible">← ESPACIO</span>
+&lt;div class="columna"&gt;Columna 3&lt;/div&gt;</code></pre>
+    </div>
+
+    <!-- EJEMPLO 3: Workaround con font-size 0 -->
+    <div class="contenedor-ejemplo">
+        <h2>Intento 3: Solución (Workaround)</h2>
+        
+        <div class="demo-area">
+            <div class="container-fix">
+                <div class="columna-fix">Columna 1</div>
+                <div class="columna-fix">Columna 2</div>
+                <div class="columna-fix">Columna 3</div>
+            </div>
+        </div>
+
+        <pre><code>/* En el contenedor padre */
+.container {
+    font-size: 0;  /* Elimina los espacios */
+}
+
+/* En las columnas */
+.columna {
+    display: inline-block;
+    width: 200px;
+    font-size: 16px;  /* Restaurar el tamaño */
+    vertical-align: top;
+}</code></pre>
+
+        <div class="info-box">
+            <strong>✅ Funciona, pero...</strong> Es un truco (hack) incómodo:
+            <ul>
+                <li>❌ Tienes que recordar restaurar el <code>font-size</code></li>
+                <li>❌ No es intuitivo</li>
+                <li>❌ Puede causar problemas con herencia de estilos</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="contenedor-ejemplo">
+        <h2>🚀 La Solución Moderna: Flexbox</h2>
+        
+        <div class="error-box">
+            <strong>💡 Mejor opción:</strong> Usa <code>display: flex</code> en lugar de <code>inline-block</code>
+        </div>
+
+        <p><strong>Ventajas de Flexbox:</strong></p>
+        <ul>
+            <li>✅ No hay espacios fantasma</li>
+            <li>✅ Más fácil de alinear</li>
+            <li>✅ Más control sobre la distribución</li>
+            <li>✅ Responsive por naturaleza</li>
+        </ul>
+
+        <p style="text-align: center; margin-top: 30px;">
+            👉 <strong>Ver solución en:</strong> <code>04-columnas-flex.html</code>
+        </p>
+    </div>
+
+    <div class="contenedor-ejemplo">
+        <h2>📋 Resumen: Tipos de Display</h2>
+        
+        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
+            <thead>
+                <tr style="background-color: #2196F3; color: white;">
+                    <th style="padding: 10px; text-align: left;">Display</th>
+                    <th style="padding: 10px; text-align: left;">Comportamiento</th>
+                    <th style="padding: 10px; text-align: left;">Problema</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background-color: #f5f5f5;">
+                    <td style="padding: 10px;"><code>block</code></td>
+                    <td style="padding: 10px;">Ocupa todo el ancho, nueva línea</td>
+                    <td style="padding: 10px;">❌ Se apilan verticalmente</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px;"><code>inline</code></td>
+                    <td style="padding: 10px;">Solo su espacio, misma línea</td>
+                    <td style="padding: 10px;">❌ No acepta width/height</td>
+                </tr>
+                <tr style="background-color: #f5f5f5;">
+                    <td style="padding: 10px;"><code>inline-block</code></td>
+                    <td style="padding: 10px;">En línea pero con dimensiones</td>
+                    <td style="padding: 10px;">❌ Espacios fantasma del HTML</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px;"><code>flex</code></td>
+                    <td style="padding: 10px;">Contenedor flexible moderno</td>
+                    <td style="padding: 10px;">✅ Sin problemas!</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="contenedor-ejemplo">
+        <h2>💡 Tips Importantes</h2>
+        <ul>
+            <li><strong>inline-block</strong> es útil para elementos pequeños (botones, badges)</li>
+            <li>Para layouts (columnas, grids), usa <strong>Flexbox</strong> o <strong>Grid</strong></li>
+            <li><code>vertical-align: top</code> es necesario con inline-block para evitar desalineación</li>
+            <li>El problema de espacios NO ocurre con Flexbox</li>
+            <li>Inspecciona con DevTools (F12) para ver los espacios fantasma</li>
+        </ul>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo: Centrar Elementos con Flexbox</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .contenedor-ejemplo {
+            background-color: white;
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 900px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #2196F3;
+            border-bottom: 2px solid #2196F3;
+            padding-bottom: 10px;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #d63384;
+            font-family: 'Courier New', monospace;
+        }
+
+        .demo-box {
+            border: 2px dashed #2196F3;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .label {
+            position: absolute;
+            top: -12px;
+            left: 10px;
+            background-color: white;
+            padding: 0 5px;
+            font-size: 14px;
+            font-weight: bold;
+            color: #2196F3;
+        }
+
+        /* ===== PASO 1: Sin Flexbox ===== */
+        .header-paso1 {
+            height: 100px;
+            background-color: #333;
+            /* Sin display: flex */
+        }
+
+        .header-paso1 img {
+            width: 80px;
+            height: 80px;
+        }
+
+        /* ===== PASO 2: Solo Flexbox ===== */
+        .header-paso2 {
+            display: flex;  /* Activar Flexbox */
+            height: 100px;
+            background-color: #333;
+        }
+
+        .header-paso2 img {
+            width: 80px;
+            height: 80px;
+        }
+
+        /* ===== PASO 3: Centrado Horizontal ===== */
+        .header-paso3 {
+            display: flex;
+            justify-content: center;  /* Centrado horizontal */
+            height: 100px;
+            background-color: #333;
+        }
+
+        .header-paso3 img {
+            width: 80px;
+            height: 80px;
+        }
+
+        /* ===== PASO 4: Centrado Completo ===== */
+        .header-paso4 {
+            display: flex;
+            justify-content: center;  /* Centrado horizontal */
+            align-items: center;      /* Centrado vertical */
+            height: 100px;
+            background-color: #333;
+        }
+
+        .header-paso4 img {
+            width: 80px;
+            height: 80px;
+        }
+
+        /* ===== BONUS: Otros casos de centrado ===== */
+        
+        /* Centrar texto */
+        .centrar-texto {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150px;
+            background-color: #e3f2fd;
+            font-size: 24px;
+            font-weight: bold;
+            color: #1976D2;
+        }
+
+        /* Centrar botón */
+        .centrar-boton {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150px;
+            background-color: #f3e5f5;
+        }
+
+        .centrar-boton button {
+            padding: 15px 30px;
+            background-color: #9c27b0;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* Centrar card */
+        .centrar-card {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px;
+            background-color: #e8f5e9;
+            padding: 20px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        /* Logo placeholder */
+        .logo-placeholder {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎯 Centrar Elementos con Flexbox</h1>
+
+    <div class="contenedor-ejemplo">
+        <h2>💻 Walkthrough: Centrar un Logo Paso a Paso</h2>
+        
+        <h3>Paso 1: Sin Flexbox (comportamiento por defecto)</h3>
+        <div class="demo-box">
+            <span class="label">❌ Sin Flexbox</span>
+            <div class="header-paso1">
+                <div class="logo-placeholder">L</div>
+            </div>
+        </div>
+        <pre><code>.header {
+    height: 100px;
+    background-color: #333;
+    /* Sin display: flex */
+}</code></pre>
+        <p><strong>❌ Resultado:</strong> El logo está arriba a la izquierda (posición por defecto)</p>
+
+        <hr style="margin: 30px 0;">
+
+        <h3>Paso 2: Activar Flexbox</h3>
+        <div class="demo-box">
+            <span class="label">Flexbox activado</span>
+            <div class="header-paso2">
+                <div class="logo-placeholder">L</div>
+            </div>
+        </div>
+        <pre><code>.header {
+    display: flex;  /* Activar Flexbox */
+    height: 100px;
+    background-color: #333;
+}</code></pre>
+        <p><strong>⚠️ Resultado:</strong> El logo sigue arriba a la izquierda (comportamiento flex por defecto)</p>
+
+        <hr style="margin: 30px 0;">
+
+        <h3>Paso 3: Centrar Horizontalmente</h3>
+        <div class="demo-box">
+            <span class="label">justify-content: center</span>
+            <div class="header-paso3">
+                <div class="logo-placeholder">L</div>
+            </div>
+        </div>
+        <pre><code>.header {
+    display: flex;
+    justify-content: center;  /* Centrado horizontal */
+    height: 100px;
+    background-color: #333;
+}</code></pre>
+        <p><strong>📍 Resultado:</strong> Logo centrado horizontalmente, pero arriba</p>
+
+        <hr style="margin: 30px 0;">
+
+        <h3>Paso 4: Centrado Completo (Horizontal + Vertical)</h3>
+        <div class="demo-box">
+            <span class="label">✅ Centrado Perfecto</span>
+            <div class="header-paso4">
+                <div class="logo-placeholder">L</div>
+            </div>
+        </div>
+        <pre><code>.header {
+    display: flex;
+    justify-content: center;  /* Centrado horizontal */
+    align-items: center;      /* Centrado vertical */
+    height: 100px;
+    background-color: #333;
+}</code></pre>
+        <p><strong>✅ Resultado:</strong> ¡Logo perfectamente centrado horizontal y verticalmente!</p>
+
+        <div class="info-box">
+            <strong>💡 Regla de Oro:</strong> Para centrar algo completamente con Flexbox:
+            <br><br>
+            <code>display: flex; justify-content: center; align-items: center;</code>
+        </div>
+    </div>
+
+    <div class="contenedor-ejemplo">
+        <h2>🎯 Más Ejemplos de Centrado</h2>
+
+        <h3>Ejemplo 1: Centrar Texto</h3>
+        <div class="demo-box">
+            <span class="label">Texto centrado</span>
+            <div class="centrar-texto">
+                ¡Texto Perfectamente Centrado!
+            </div>
+        </div>
+        <pre><code>.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}</code></pre>
+
+        <h3>Ejemplo 2: Centrar Botón</h3>
+        <div class="demo-box">
+            <span class="label">Botón centrado</span>
+            <div class="centrar-boton">
+                <button>Haz Click</button>
+            </div>
+        </div>
+        <pre><code>.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+}</code></pre>
+
+        <h3>Ejemplo 3: Centrar Card/Tarjeta</h3>
+        <div class="demo-box">
+            <span class="label">Card centrada</span>
+            <div class="centrar-card">
+                <div class="card">
+                    <h3>Tarjeta Centrada</h3>
+                    <p>Este card está perfectamente centrado</p>
+                </div>
+            </div>
+        </div>
+        <pre><code>.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+}</code></pre>
+    </div>
+
+    <div class="contenedor-ejemplo">
+        <h2>📊 Variaciones de Alineación</h2>
+
+        <h3>justify-content (Eje Horizontal)</h3>
+        
+        <div style="display: flex; justify-content: flex-start; background: #f5f5f5; padding: 10px; margin: 10px 0;">
+            <div class="logo-placeholder" style="width: 60px; height: 60px; font-size: 24px;">L</div>
+            <span style="margin-left: 10px; align-self: center;">flex-start (izquierda)</span>
+        </div>
+
+        <div style="display: flex; justify-content: center; background: #f5f5f5; padding: 10px; margin: 10px 0;">
+            <div class="logo-placeholder" style="width: 60px; height: 60px; font-size: 24px;">L</div>
+            <span style="margin-left: 10px; align-self: center;">center (centro)</span>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; background: #f5f5f5; padding: 10px; margin: 10px 0;">
+            <span style="margin-right: 10px; align-self: center;">flex-end (derecha)</span>
+            <div class="logo-placeholder" style="width: 60px; height: 60px; font-size: 24px;">L</div>
+        </div>
+
+        <h3>align-items (Eje Vertical)</h3>
+        
+        <div style="display: flex; align-items: flex-start; background: #f5f5f5; padding: 10px; margin: 10px 0; height: 100px;">
+            <div class="logo-placeholder" style="width: 60px; height: 60px; font-size: 24px;">L</div>
+            <span style="margin-left: 10px;">flex-start (arriba)</span>
+        </div>
+
+        <div style="display: flex; align-items: center; background: #f5f5f5; padding: 10px; margin: 10px 0; height: 100px;">
+            <div class="logo-placeholder" style="width: 60px; height: 60px; font-size: 24px;">L</div>
+            <span style="margin-left: 10px;">center (centro)</span>
+        </div>
+
+        <div style="display: flex; align-items: flex-end; background: #f5f5f5; padding: 10px; margin: 10px 0; height: 100px;">
+            <div class="logo-placeholder" style="width: 60px; height: 60px; font-size: 24px;">L</div>
+            <span style="margin-left: 10px;">flex-end (abajo)</span>
+        </div>
+    </div>
+
+    <div class="contenedor-ejemplo">
+        <h2>💡 Tips Importantes</h2>
+        <ul>
+            <li><strong>justify-content</strong> controla la alineación en el eje principal (horizontal por defecto)</li>
+            <li><strong>align-items</strong> controla la alineación en el eje transversal (vertical por defecto)</li>
+            <li>Para centrado perfecto: usa <strong>AMBAS</strong> propiedades con <code>center</code></li>
+            <li>El contenedor debe tener altura definida para que <code>align-items</code> tenga efecto</li>
+            <li>Flexbox funciona en el contenedor padre, no en el elemento a centrar</li>
+        </ul>
+    </div>
+
+    <div class="contenedor-ejemplo" style="background-color: #e8f5e9;">
+        <h2 style="color: #2e7d32; border-bottom-color: #2e7d32;">🎉 Resumen</h2>
+        <div style="text-align: center; padding: 20px;">
+            <h3>La Fórmula del Centrado Perfecto:</h3>
+            <pre style="background: white; padding: 20px; border-radius: 5px; display: inline-block;"><code>.contenedor {
+    display: flex;
+    justify-content: center;  /* ← Horizontal */
+    align-items: center;      /* ← Vertical */
+    height: 100px;            /* ← Necesario */
+}</code></pre>
+            <p style="font-size: 18px; margin-top: 20px;">
+                ✅ <strong>Antes:</strong> margin auto, position absolute, transform...<br>
+                ✅ <strong>Ahora:</strong> ¡Solo 3 líneas con Flexbox! 🚀
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+

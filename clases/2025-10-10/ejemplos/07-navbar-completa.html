@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo: NavBar Completa con Flexbox</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* ===== NAVBAR FINAL (FUNCIONAL) ===== */
+        .navbar {
+            display: flex;
+            justify-content: space-between;  /* Logo izq, Links der */
+            align-items: center;             /* Centrado vertical */
+            background-color: #2196F3;
+            padding: 15px 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo a {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .nav-links {
+            display: flex;           /* Links en línea */
+            list-style: none;        /* Sin viñetas */
+            gap: 30px;               /* Espacio entre items */
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #FFD700;  /* Dorado al hover */
+        }
+
+        /* Contenedor de ejemplos */
+        .contenedor {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #2196F3;
+            padding-bottom: 15px;
+        }
+
+        h2 {
+            color: #2196F3;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #d63384;
+            font-family: 'Courier New', monospace;
+        }
+
+        pre {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            border-left: 4px solid #2196F3;
+        }
+
+        .step-box {
+            background-color: #e3f2fd;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            border-left: 4px solid #2196F3;
+        }
+
+        /* Demostraciones paso a paso */
+        .demo-navbar {
+            margin: 20px 0;
+            border: 2px dashed #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        /* Paso 1: Sin Flexbox */
+        .navbar-paso1 {
+            background-color: #2196F3;
+            padding: 15px 30px;
+        }
+
+        .navbar-paso1 .logo a,
+        .navbar-paso1 .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .navbar-paso1 .nav-links {
+            list-style: none;
+        }
+
+        /* Paso 2: Flex básico */
+        .navbar-paso2 {
+            display: flex;
+            background-color: #2196F3;
+            padding: 15px 30px;
+        }
+
+        .navbar-paso2 .logo a {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .navbar-paso2 .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .navbar-paso2 .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Paso 3: Space-between */
+        .navbar-paso3 {
+            display: flex;
+            justify-content: space-between;
+            background-color: #2196F3;
+            padding: 15px 30px;
+        }
+
+        .navbar-paso3 .logo a {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .navbar-paso3 .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .navbar-paso3 .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Paso 4: Centrado vertical */
+        .navbar-paso4 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2196F3;
+            padding: 15px 30px;
+        }
+
+        .navbar-paso4 .logo a {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .navbar-paso4 .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .navbar-paso4 .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .info-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .success-box {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVBAR FUNCIONAL -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="#">MiSitio</a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#nosotros">Nosotros</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <div class="contenedor">
+        <h1>🧭 NavBar Profesional - Walkthrough Paso a Paso</h1>
+
+        <p>Vamos a crear una barra de navegación profesional desde cero, paso a paso.</p>
+
+        <h2>📝 Paso 1: Estructura HTML Semántica</h2>
+        <div class="step-box">
+            <p><strong>Primero, el HTML:</strong></p>
+            <pre><code>&lt;nav class="navbar"&gt;
+    &lt;div class="logo"&gt;
+        &lt;a href="#"&gt;MiSitio&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;ul class="nav-links"&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Servicios&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Nosotros&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Contacto&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            <p><strong>Sin CSS, se ve así:</strong></p>
+        </div>
+
+        <div class="demo-navbar">
+            <div class="navbar-paso1">
+                <div class="logo">
+                    <a href="#">MiSitio</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        <p>❌ Los links están apilados verticalmente (comportamiento por defecto)</p>
+
+        <h2>🎨 Paso 2: Navbar como Flex Container</h2>
+        <div class="step-box">
+            <pre><code>.navbar {
+    display: flex;
+    background-color: #2196F3;
+    padding: 15px 30px;
+}
+
+.logo a {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}</code></pre>
+        </div>
+
+        <div class="demo-navbar">
+            <div class="navbar-paso2">
+                <div class="logo">
+                    <a href="#">MiSitio</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        <p>⚠️ Los elementos están en línea, pero todos a la izquierda</p>
+
+        <h2>↔️ Paso 3: Logo Izquierda, Links Derecha</h2>
+        <div class="step-box">
+            <pre><code>.navbar {
+    display: flex;
+    justify-content: space-between;  /* ¡Clave! */
+    background-color: #2196F3;
+    padding: 15px 30px;
+}</code></pre>
+        </div>
+
+        <div class="demo-navbar">
+            <div class="navbar-paso3">
+                <div class="logo">
+                    <a href="#">MiSitio</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="info-box">
+            <strong>💡 space-between:</strong> Coloca el primer elemento al inicio y el último al final, maximizando el espacio entre ellos.
+        </div>
+
+        <h2>⏸️ Paso 4: Centrado Vertical</h2>
+        <div class="step-box">
+            <pre><code>.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  /* Centrado vertical */
+    background-color: #2196F3;
+    padding: 15px 30px;
+}</code></pre>
+        </div>
+
+        <div class="demo-navbar">
+            <div class="navbar-paso4">
+                <div class="logo">
+                    <a href="#">MiSitio</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Nosotros</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="success-box">
+            <strong>✅ Perfecto:</strong> Logo y links perfectamente alineados vertical y horizontalmente.
+        </div>
+
+        <h2>🖱️ Paso 5: Efectos Hover (Final)</h2>
+        <div class="step-box">
+            <pre><code>.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;  /* Transición suave */
+}
+
+.nav-links a:hover {
+    color: #FFD700;  /* Dorado al hover */
+}
+
+.logo a:hover {
+    color: #FFD700;
+}</code></pre>
+        </div>
+
+        <p><strong>Resultado final:</strong> La navbar funcional al inicio de esta página ⬆️</p>
+        <p><em>Pasa el mouse sobre los links para ver el efecto hover</em></p>
+
+        <h2>🎨 Variaciones y Personalizaciones</h2>
+
+        <h3>1. NavBar Oscura</h3>
+        <pre><code>.navbar {
+    background-color: #1a1a1a;  /* Fondo oscuro */
+}
+
+.nav-links a:hover {
+    color: #00bcd4;  /* Cyan al hover */
+}</code></pre>
+
+        <h3>2. NavBar con Sombra</h3>
+        <pre><code>.navbar {
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}</code></pre>
+
+        <h3>3. Links con Fondo al Hover</h3>
+        <pre><code>.nav-links a {
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255,255,255,0.2);
+    color: white;
+}</code></pre>
+
+        <h3>4. Logo con Imagen</h3>
+        <pre><code>.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}</code></pre>
+
+        <h2>📱 Bonus: NavBar Responsive</h2>
+        <div class="info-box">
+            <p><strong>Para móviles, agregar media query:</strong></p>
+            <pre><code>@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+}</code></pre>
+            <p>Esto apila el logo y los links verticalmente en pantallas pequeñas.</p>
+        </div>
+
+        <h2>💡 Tips Importantes</h2>
+        <ul>
+            <li><strong>justify-content: space-between</strong> es perfecto para navbars (logo izq, links der)</li>
+            <li><strong>align-items: center</strong> asegura alineación vertical perfecta</li>
+            <li>Usa <strong>gap</strong> en <code>.nav-links</code> para espacio uniforme entre items</li>
+            <li>Agrega <strong>transition</strong> para efectos suaves al hover</li>
+            <li>Usa etiqueta semántica <code>&lt;nav&gt;</code> para mejor SEO y accesibilidad</li>
+            <li><strong>box-shadow</strong> añade profundidad profesional</li>
+        </ul>
+
+        <h2>📋 Código Completo Final</h2>
+        <pre><code>/* HTML */
+&lt;nav class="navbar"&gt;
+    &lt;div class="logo"&gt;
+        &lt;a href="#"&gt;MiSitio&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;ul class="nav-links"&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Inicio&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Servicios&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Nosotros&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Contacto&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;
+
+/* CSS */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2196F3;
+    padding: 15px 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.logo a {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #FFD700;
+}
+
+.logo a:hover {
+    color: #FFD700;
+}</code></pre>
+
+        <div class="success-box" style="margin-top: 30px;">
+            <h2 style="color: #2e7d32; margin: 0 0 15px 0;">🎉 ¡Navbar Completa!</h2>
+            <p style="font-size: 18px; margin: 0;">
+                ✅ <strong>Responsive</strong> - Se adapta a diferentes tamaños<br>
+                ✅ <strong>Interactiva</strong> - Efectos hover suaves<br>
+                ✅ <strong>Profesional</strong> - Diseño moderno y limpio<br>
+                ✅ <strong>Semántica</strong> - Usa etiqueta &lt;nav&gt;<br>
+                ✅ <strong>Flexbox</strong> - Sin trucos, solo flex! 🚀
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+

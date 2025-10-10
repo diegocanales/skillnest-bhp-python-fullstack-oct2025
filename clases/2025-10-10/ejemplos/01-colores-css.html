@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo: Propiedades de Color y Texto</title>
+    <style>
+        /* Resetear estilos por defecto */
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        /* ===== MÉTODOS DE COLOR ===== */
+        
+        /* Método 1: Nombres de color */
+        .ejemplo-nombres {
+            color: slategray;           /* Texto gris azulado */
+            background-color: lightgray; /* Fondo gris claro */
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        /* Método 2: RGB (Red, Green, Blue) */
+        .ejemplo-rgb {
+            color: rgb(33, 150, 243);      /* Texto azul */
+            background-color: rgb(245, 245, 245);  /* Fondo gris muy claro */
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        /* Método 3: Hexadecimal (más común) */
+        .ejemplo-hex {
+            color: #2196F3;           /* Texto azul (igual que RGB anterior) */
+            background-color: #f5f5f5; /* Fondo gris claro */
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        /* ===== PROPIEDADES DE TEXTO ===== */
+
+        h1 {
+            text-align: center;        /* Centrado */
+            font-weight: bold;         /* Negrita */
+            color: #2196F3;           /* Color azul */
+            font-family: sans-serif;   /* Tipografía sin serifa */
+        }
+
+        h2 {
+            text-align: left;          /* Alineado a la izquierda */
+            color: #333;              /* Gris oscuro */
+            border-bottom: 2px solid #2196F3;
+            padding-bottom: 10px;
+        }
+
+        p {
+            text-align: justify;       /* Texto justificado */
+            font-weight: normal;       /* Peso normal */
+            line-height: 1.6;         /* Altura de línea para mejor lectura */
+        }
+
+        /* Enlaces sin decoración */
+        a {
+            color: #2196F3;           /* Color azul */
+            text-decoration: none;     /* Sin subrayado por defecto */
+            font-weight: 500;
+        }
+
+        /* Enlaces con hover */
+        a:hover {
+            text-decoration: underline; /* Subrayado al pasar el mouse */
+            color: #1976D2;           /* Azul más oscuro */
+        }
+
+        /* Texto en cursiva */
+        .cursiva {
+            font-style: italic;
+            color: #666;
+        }
+
+        /* Texto tachado */
+        .tachado {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        /* Contenedor de ejemplo */
+        .contenedor-ejemplo {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Código de ejemplo */
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            color: #d63384;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎨 Propiedades de Color y Texto en CSS</h1>
+
+    <div class="contenedor-ejemplo">
+        <h2>Métodos para Definir Colores</h2>
+        
+        <div class="ejemplo-nombres">
+            <strong>Método 1: Nombres de color</strong>
+            <p>Este párrafo usa <code>color: slategray</code> y <code>background-color: lightgray</code></p>
+            <p>✅ Ventaja: Fácil de recordar</p>
+            <p>❌ Desventaja: Colores limitados (~140 nombres)</p>
+        </div>
+
+        <div class="ejemplo-rgb">
+            <strong>Método 2: RGB (Red, Green, Blue)</strong>
+            <p>Este párrafo usa <code>color: rgb(33, 150, 243)</code></p>
+            <p>✅ Ventaja: 16 millones de colores posibles (0-255 por canal)</p>
+            <p>💡 Tip: Puedes usar rgba(r, g, b, alpha) para transparencia</p>
+        </div>
+
+        <div class="ejemplo-hex">
+            <strong>Método 3: Hexadecimal</strong>
+            <p>Este párrafo usa <code>color: #2196F3</code></p>
+            <p>✅ Ventaja: Compacto y muy usado en diseño web</p>
+            <p>💡 Tip: #RGB se expande a #RRGGBB (ej: #f00 = #ff0000)</p>
+        </div>
+    </div>
+
+    <div class="contenedor-ejemplo">
+        <h2>Propiedades de Texto</h2>
+        
+        <p><strong>text-align:</strong> Controla la alineación del texto</p>
+        <p style="text-align: left;">← Izquierda (left)</p>
+        <p style="text-align: center;">↔ Centro (center)</p>
+        <p style="text-align: right;">Derecha (right) →</p>
+        <p style="text-align: justify;">Justificado (justify) - El texto se distribuye uniformemente entre los márgenes, como en libros y revistas.</p>
+        
+        <hr>
+        
+        <p><strong>font-weight:</strong> Controla el grosor del texto</p>
+        <p style="font-weight: 300;">Ligero (300)</p>
+        <p style="font-weight: 400;">Normal (400 o normal)</p>
+        <p style="font-weight: 700;">Negrita (700 o bold)</p>
+        <p style="font-weight: 900;">Extra negrita (900)</p>
+        
+        <hr>
+        
+        <p><strong>font-style:</strong> Estilo de la fuente</p>
+        <p style="font-style: normal;">Normal</p>
+        <p style="font-style: italic;">Cursiva/Itálica (italic)</p>
+        
+        <hr>
+        
+        <p><strong>text-decoration:</strong> Decoración del texto</p>
+        <p style="text-decoration: none;">Sin decoración (none)</p>
+        <p style="text-decoration: underline;">Subrayado (underline)</p>
+        <p style="text-decoration: line-through;">Tachado (line-through)</p>
+        <p style="text-decoration: overline;">Línea superior (overline)</p>
+        
+        <hr>
+        
+        <p><strong>Enlaces interactivos:</strong></p>
+        <p>Visita <a href="#">este enlace</a> y pasa el mouse sobre él para ver el efecto hover</p>
+    </div>
+
+    <div class="contenedor-ejemplo">
+        <h2>💡 Tips Importantes</h2>
+        <ul>
+            <li><code>color</code> afecta al TEXTO</li>
+            <li><code>background-color</code> afecta al FONDO</li>
+            <li>Los colores hexadecimales empiezan con <code>#</code></li>
+            <li>RGB usa valores de 0 a 255 para cada canal</li>
+            <li>Puedes combinar múltiples propiedades de texto</li>
+        </ul>
+    </div>
+
+    <div class="contenedor-ejemplo" style="background-color: #e3f2fd;">
+        <h2>🎯 Ejemplo Práctico Combinado</h2>
+        <p style="
+            color: #1976D2; 
+            font-weight: bold; 
+            text-align: center; 
+            font-size: 24px;
+            text-decoration: underline;
+        ">
+            Este texto combina varias propiedades
+        </p>
+        <p style="text-align: center; color: #666; font-style: italic;">
+            Color azul, negrita, centrado, subrayado y grande
+        </p>
+    </div>
+</body>
+</html>
+

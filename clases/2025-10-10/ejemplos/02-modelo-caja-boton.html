@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo: Modelo de Caja - Creando un Botón</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px; /* Ancho máximo */
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .contenedor {
+            background-color: white;
+            padding: 30px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+
+        h2 {
+            color: #2196F3;
+            border-bottom: 2px solid #2196F3;
+            padding-bottom: 10px;
+        }
+
+        .ejemplo {
+            margin: 30px 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+
+        /* ===== PASO 1: Botón Base ===== */
+        .boton-paso1 {
+            width: 150px;
+            height: 40px;
+            background-color: #2196F3;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            /* Sin padding, border, ni margin aún */
+        }
+
+        /* ===== PASO 2: Agregar Padding (espacio interno) ===== */
+        .boton-paso2 {
+            width: 150px;
+            height: 40px;
+            padding: 10px 20px;  /* Arriba-abajo: 10px | Izquierda-derecha: 20px */
+            background-color: #2196F3;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* ===== PASO 3: Agregar Border (borde) ===== */
+        .boton-paso3 {
+            width: 150px;
+            height: 40px;
+            padding: 10px 20px;
+            border: 2px solid #1976D2;  /* Grosor | Tipo | Color */
+            border-radius: 5px;         /* Esquinas redondeadas */
+            background-color: #2196F3;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* ===== PASO 4: Agregar Margin (espacio externo) ===== */
+        .boton-paso4 {
+            width: 150px;
+            height: 40px;
+            padding: 10px 20px;
+            border: 2px solid #1976D2;
+            border-radius: 5px;
+            margin: 10px;  /* Espacio alrededor del botón */
+            background-color: #2196F3;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* ===== BOTÓN FINAL CON HOVER ===== */
+        .boton-final {
+            width: 150px;
+            height: 40px;
+            padding: 10px 20px;
+            border: 2px solid #1976D2;
+            border-radius: 5px;
+            margin: 10px;
+            background-color: #2196F3;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;  /* Transición suave */
+        }
+
+        .boton-final:hover {
+            background-color: #1976D2;
+            transform: translateY(-2px);  /* Efecto de elevación */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Diagrama del modelo de caja */
+        .diagrama {
+            background-color: #fff;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .diagrama pre {
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #d63384;
+            font-family: 'Courier New', monospace;
+        }
+
+        .info {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-left: 4px solid #2196F3;
+            margin: 15px 0;
+        }
+
+        /* Visualización del box model */
+        .box-visual {
+            position: relative;
+            margin: 30px auto;
+            width: fit-content;
+        }
+
+        .margin-box {
+            border: 2px dashed #ff9800;
+            padding: 10px;
+            background-color: rgba(255, 152, 0, 0.1);
+        }
+
+        .border-box {
+            border: 2px solid #2196F3;
+            padding: 20px;
+            background-color: rgba(33, 150, 243, 0.1);
+        }
+
+        .padding-box {
+            border: 2px dashed #4caf50;
+            padding: 10px;
+            background-color: rgba(76, 175, 80, 0.1);
+        }
+
+        .content-box {
+            background-color: #e91e63;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .label {
+            font-size: 12px;
+            font-weight: bold;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>📦 Modelo de Caja - Walkthrough Paso a Paso</h1>
+
+    <div class="contenedor">
+        <h2>🎯 ¿Qué es el Modelo de Caja?</h2>
+        <p>Cada elemento HTML es una caja compuesta por 4 capas:</p>
+        
+        <div class="diagrama">
+            <pre>
+┌─────────── MARGIN (espacio externo) ──────────┐
+│ ┌───────── BORDER (borde) ─────────────────┐  │
+│ │ ┌─────── PADDING (espacio interno) ────┐ │  │
+│ │ │                                      │ │  │
+│ │ │         CONTENT (contenido)          │ │  │
+│ │ │         width × height               │ │  │
+│ │ │                                      │ │  │
+│ │ └──────────────────────────────────────┘ │  │
+│ └──────────────────────────────────────────┘  │
+└───────────────────────────────────────────────┘
+            </pre>
+        </div>
+
+        <div class="info">
+            <strong>💡 Importante:</strong> El ancho total que ocupa un elemento es:
+            <br>
+            <code>width + (padding × 2) + (border × 2) + (margin × 2)</code>
+        </div>
+    </div>
+
+    <div class="contenedor">
+        <h2>💻 Walkthrough: Creando un Botón Paso a Paso</h2>
+
+        <div class="ejemplo">
+            <h3>Paso 1: Contenido Base</h3>
+            <button class="boton-paso1">Click aquí</button>
+            <pre><code>button {
+    width: 150px;
+    height: 40px;
+    background-color: #2196F3;
+    color: white;
+}</code></pre>
+            <p>❌ Problema: El botón se ve muy pegado y simple</p>
+        </div>
+
+        <div class="ejemplo">
+            <h3>Paso 2: Agregar Padding (espacio interno)</h3>
+            <button class="boton-paso2">Click aquí</button>
+            <pre><code>button {
+    width: 150px;
+    height: 40px;
+    padding: 10px 20px;  /* Arriba-abajo: 10px | Izq-der: 20px */
+    background-color: #2196F3;
+    color: white;
+}</code></pre>
+            <p>✅ Mejora: El texto ya no está pegado a los bordes</p>
+        </div>
+
+        <div class="ejemplo">
+            <h3>Paso 3: Agregar Border (borde redondeado)</h3>
+            <button class="boton-paso3">Click aquí</button>
+            <pre><code>button {
+    width: 150px;
+    height: 40px;
+    padding: 10px 20px;
+    border: 2px solid #1976D2;  /* Grosor | Tipo | Color */
+    border-radius: 5px;         /* Esquinas redondeadas */
+    background-color: #2196F3;
+    color: white;
+}</code></pre>
+            <p>✅ Mejora: Bordes suaves y definidos</p>
+        </div>
+
+        <div class="ejemplo">
+            <h3>Paso 4: Agregar Margin (espacio externo)</h3>
+            <button class="boton-paso4">Click aquí</button>
+            <button class="boton-paso4">Otro botón</button>
+            <pre><code>button {
+    width: 150px;
+    height: 40px;
+    padding: 10px 20px;
+    border: 2px solid #1976D2;
+    border-radius: 5px;
+    margin: 10px;  /* Espacio alrededor del botón */
+    background-color: #2196F3;
+    color: white;
+}</code></pre>
+            <p>✅ Mejora: Los botones están separados entre sí</p>
+        </div>
+
+        <div class="ejemplo">
+            <h3>Paso 5: Botón Final con Hover</h3>
+            <button class="boton-final">Click aquí</button>
+            <button class="boton-final">Hover me!</button>
+            <pre><code>button {
+    /* ... todas las propiedades anteriores ... */
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #1976D2;  /* Color más oscuro */
+    transform: translateY(-2px); /* Se eleva */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}</code></pre>
+            <p>✅ ¡Botón interactivo y profesional!</p>
+        </div>
+    </div>
+
+    <div class="contenedor">
+        <h2>📐 Sintaxis de Padding y Margin</h2>
+        
+        <div class="info">
+            <h3>4 formas de escribir padding/margin:</h3>
+            
+            <p><strong>1. Un valor:</strong> <code>padding: 20px;</code></p>
+            <p>→ Todos los lados iguales (arriba, derecha, abajo, izquierda)</p>
+            
+            <p><strong>2. Dos valores:</strong> <code>padding: 10px 20px;</code></p>
+            <p>→ Vertical | Horizontal (arriba-abajo: 10px | izq-der: 20px)</p>
+            
+            <p><strong>3. Tres valores:</strong> <code>padding: 10px 20px 30px;</code></p>
+            <p>→ Arriba | Horizontal | Abajo</p>
+            
+            <p><strong>4. Cuatro valores:</strong> <code>padding: 10px 20px 30px 40px;</code></p>
+            <p>→ Arriba | Derecha | Abajo | Izquierda (sentido de las agujas del reloj ⏰)</p>
+        </div>
+    </div>
+
+    <div class="contenedor">
+        <h2>🎨 Visualización del Box Model</h2>
+        <div class="box-visual">
+            <div class="margin-box">
+                <div class="label" style="color: #ff9800;">↔ MARGIN (naranja)</div>
+                <div class="border-box">
+                    <div class="label" style="color: #2196F3;">↔ BORDER (azul)</div>
+                    <div class="padding-box">
+                        <div class="label" style="color: #4caf50;">↔ PADDING (verde)</div>
+                        <div class="content-box">
+                            CONTENT
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p style="text-align: center; color: #666;">
+            <em>Inspecciona con DevTools (F12) para ver el box model de cualquier elemento</em>
+        </p>
+    </div>
+
+    <div class="contenedor">
+        <h2>💡 Tips Importantes</h2>
+        <ul>
+            <li><strong>Padding:</strong> Crea espacio DENTRO del elemento (afecta el fondo)</li>
+            <li><strong>Margin:</strong> Crea espacio FUERA del elemento (separa de otros)</li>
+            <li><strong>Border:</strong> Línea entre padding y margin</li>
+            <li><strong>box-sizing: border-box;</strong> hace que width incluya padding y border</li>
+            <li>Usa DevTools (F12) para visualizar el box model de cualquier elemento</li>
+        </ul>
+    </div>
+</body>
+</html>
+

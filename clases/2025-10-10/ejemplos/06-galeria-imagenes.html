@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo: Galería de Imágenes con Flexbox</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 40px;
+        }
+
+        .contenedor {
+            background-color: white;
+            padding: 30px;
+            margin: 20px auto;
+            max-width: 900px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #2196F3;
+            border-bottom: 2px solid #2196F3;
+            padding-bottom: 10px;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #d63384;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* ===== GALERÍA BÁSICA - 4 IMÁGENES ===== */
+        .galeria-basica {
+            display: flex;
+            justify-content: space-evenly;  /* Espacio uniforme */
+            padding: 20px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+        }
+
+        .galeria-basica img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;  /* Mantiene proporción sin distorsión */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .galeria-basica img:hover {
+            transform: scale(1.05);  /* Efecto zoom al hover */
+        }
+
+        /* ===== GALERÍA CON GAP ===== */
+        .galeria-gap {
+            display: flex;
+            gap: 20px;  /* Espacio entre imágenes */
+            padding: 20px;
+            background-color: #e3f2fd;
+            border-radius: 8px;
+        }
+
+        .galeria-gap img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        /* ===== GALERÍA RESPONSIVE (WRAP) ===== */
+        .galeria-responsive {
+            display: flex;
+            flex-wrap: wrap;  /* Permite múltiples filas */
+            gap: 15px;
+            padding: 20px;
+            background-color: #f3e5f5;
+            border-radius: 8px;
+            justify-content: center;
+        }
+
+        .galeria-responsive img {
+            width: 180px;
+            height: 180px;
+            border-radius: 10px;
+            object-fit: cover;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* ===== COMPARACIÓN OBJECT-FIT ===== */
+        .comparacion-fit {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .comparacion-fit > div {
+            text-align: center;
+        }
+
+        .comparacion-fit img {
+            width: 200px;
+            height: 200px;
+            border-radius: 8px;
+            border: 2px solid #ddd;
+        }
+
+        .fit-cover { object-fit: cover; }
+        .fit-contain { object-fit: contain; background: #f5f5f5; }
+        .fit-fill { object-fit: fill; }
+
+        .info-box {
+            background-color: #e3f2fd;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        .success-box {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+            padding: 15px;
+            margin: 15px 0;
+        }
+
+        /* Placeholder de imagen */
+        .img-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 48px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>🖼️ Galería de Imágenes con Flexbox</h1>
+
+    <div class="contenedor">
+        <h2>💻 Walkthrough: Galería Básica (4 Imágenes)</h2>
+        
+        <h3>Paso 1: Contenedor Flex</h3>
+        <div class="galeria-basica">
+            <div style="width: 150px; height: 150px; border-radius: 10px; overflow: hidden;">
+                <div class="img-placeholder">1</div>
+            </div>
+            <div style="width: 150px; height: 150px; border-radius: 10px; overflow: hidden;">
+                <div class="img-placeholder">2</div>
+            </div>
+            <div style="width: 150px; height: 150px; border-radius: 10px; overflow: hidden;">
+                <div class="img-placeholder">3</div>
+            </div>
+            <div style="width: 150px; height: 150px; border-radius: 10px; overflow: hidden;">
+                <div class="img-placeholder">4</div>
+            </div>
+        </div>
+
+        <pre><code>.galeria {
+    display: flex;
+    justify-content: space-evenly;  /* Espacio uniforme */
+    padding: 20px;
+    background-color: #f5f5f5;
+}</code></pre>
+
+        <h3>Paso 2: Imágenes Uniformes</h3>
+        <pre><code>.galeria img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;  /* ¡Importante! Mantiene proporción */
+}</code></pre>
+
+        <div class="success-box">
+            <strong>✅ Resultado:</strong> Galería perfecta con imágenes del mismo tamaño y sin distorsión
+        </div>
+    </div>
+
+    <div class="contenedor">
+        <h2>🎯 Galería con Gap (Espacio Uniforme)</h2>
+        
+        <div class="galeria-gap">
+            <div style="width: 150px; height: 150px; border-radius: 10px; overflow: hidden;">
+                <div class="img-placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">1</div>
+            </div>
+            <div style="width: 150px; height: 150px; border-radius: 10px; overflow: hidden;">
+                <div class="img-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">2</div>
+            </div>
+            <div style="width: 150px; height: 150px; border-radius: 10px; overflow: hidden;">
+                <div class="img-placeholder" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">3</div>
+            </div>
+            <div style="width: 150px; height: 150px; border-radius: 10px; overflow: hidden;">
+                <div class="img-placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">4</div>
+            </div>
+        </div>
+
+        <pre><code>.galeria {
+    display: flex;
+    gap: 20px;  /* Espacio entre imágenes */
+    padding: 20px;
+}
+
+.galeria img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+}</code></pre>
+
+        <div class="info-box">
+            <strong>💡 Ventaja de gap:</strong> No necesitas <code>margin</code> en las imágenes. El espacio se aplica automáticamente entre elementos.
+        </div>
+    </div>
+
+    <div class="contenedor">
+        <h2>📱 Galería Responsive (con wrap)</h2>
+        
+        <p>Con <code>flex-wrap</code>, las imágenes se adaptan automáticamente:</p>
+
+        <div class="galeria-responsive">
+            <div style="width: 180px; height: 180px; border-radius: 10px; overflow: hidden;">
+                <div class="img-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">1</div>
+            </div>
+            <div style="width: 180px; height: 180px; border-radius: 10px; overflow: hidden;">
+                <div class="img-placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">2</div>
+            </div>
+            <div style="width: 180px; height: 180px; border-radius: 10px; overflow: hidden;">
+                <div class="img-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">3</div>
+            </div>
+            <div style="width: 180px; height: 180px; border-radius: 10px; overflow: hidden;">
+                <div class="img-placeholder" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">4</div>
+            </div>
+            <div style="width: 180px; height: 180px; border-radius: 10px; overflow: hidden;">
+                <div class="img-placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">5</div>
+            </div>
+            <div style="width: 180px; height: 180px; border-radius: 10px; overflow: hidden;">
+                <div class="img-placeholder" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">6</div>
+            </div>
+        </div>
+
+        <pre><code>.galeria {
+    display: flex;
+    flex-wrap: wrap;  /* Permite múltiples filas */
+    gap: 15px;
+    justify-content: center;
+}
+
+.galeria img {
+    width: 180px;
+    height: 180px;
+    border-radius: 10px;
+    object-fit: cover;
+}</code></pre>
+
+        <div class="info-box">
+            <strong>💡 Comportamiento:</strong> Si no caben todas en una fila, pasan automáticamente a la siguiente. ¡Responsive sin media queries!
+        </div>
+    </div>
+
+    <div class="contenedor">
+        <h2>🖼️ object-fit: Control de Proporciones</h2>
+        
+        <p>La propiedad <code>object-fit</code> controla cómo se ajustan las imágenes:</p>
+
+        <div class="comparacion-fit">
+            <div>
+                <div style="width: 200px; height: 200px; border-radius: 8px; overflow: hidden; border: 2px solid #ddd;">
+                    <div class="img-placeholder" style="width: 300px; height: 150px;">Wide</div>
+                </div>
+                <p><strong>cover</strong> (recomendado)</p>
+                <p style="font-size: 14px; color: #666;">Cubre todo el espacio<br>Recorta si es necesario</p>
+            </div>
+
+            <div>
+                <div style="width: 200px; height: 200px; border-radius: 8px; overflow: hidden; border: 2px solid #ddd; background: #f5f5f5; display: flex; align-items: center; justify-content: center;">
+                    <div class="img-placeholder" style="width: 150px; height: 100px;">Wide</div>
+                </div>
+                <p><strong>contain</strong></p>
+                <p style="font-size: 14px; color: #666;">Cabe completo<br>Puede dejar espacios</p>
+            </div>
+
+            <div>
+                <div style="width: 200px; height: 200px; border-radius: 8px; overflow: hidden; border: 2px solid #ddd;">
+                    <div class="img-placeholder" style="width: 100%; height: 100%;">Fill</div>
+                </div>
+                <p><strong>fill</strong></p>
+                <p style="font-size: 14px; color: #666;">Estira para llenar<br>⚠️ Distorsiona</p>
+            </div>
+        </div>
+
+        <pre><code>/* Para galerías uniformes: */
+img {
+    object-fit: cover;  /* ✅ Recomendado */
+}
+
+/* Para preservar imagen completa: */
+img {
+    object-fit: contain;  /* Puede dejar espacios */
+}</code></pre>
+
+        <div class="success-box">
+            <strong>✅ Recomendación:</strong> Usa <code>object-fit: cover</code> para galerías donde todas las imágenes deben verse del mismo tamaño.
+        </div>
+    </div>
+
+    <div class="contenedor">
+        <h2>🎨 Efectos Interactivos</h2>
+        
+        <h3>Hover con Zoom</h3>
+        <div style="display: flex; gap: 20px; justify-content: center; padding: 20px; background: #f5f5f5; border-radius: 8px;">
+            <div style="width: 150px; height: 150px; border-radius: 10px; overflow: hidden; transition: transform 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                <div class="img-placeholder">1</div>
+            </div>
+            <div style="width: 150px; height: 150px; border-radius: 10px; overflow: hidden; transition: transform 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                <div class="img-placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">2</div>
+            </div>
+        </div>
+
+        <pre><code>.galeria img {
+    transition: transform 0.3s ease;
+}
+
+.galeria img:hover {
+    transform: scale(1.05);  /* Zoom al pasar el mouse */
+}</code></pre>
+
+        <h3>Sombras al Hover</h3>
+        <div style="display: flex; gap: 20px; justify-content: center; padding: 20px; background: #f5f5f5; border-radius: 8px; margin-top: 20px;">
+            <div style="width: 150px; height: 150px; border-radius: 10px; overflow: hidden; transition: box-shadow 0.3s ease; cursor: pointer;" onmouseover="this.style.boxShadow='0 8px 16px rgba(0,0,0,0.3)'" onmouseout="this.style.boxShadow='0 2px 4px rgba(0,0,0,0.1)'">
+                <div class="img-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">1</div>
+            </div>
+            <div style="width: 150px; height: 150px; border-radius: 10px; overflow: hidden; transition: box-shadow 0.3s ease; cursor: pointer;" onmouseover="this.style.boxShadow='0 8px 16px rgba(0,0,0,0.3)'" onmouseout="this.style.boxShadow='0 2px 4px rgba(0,0,0,0.1)'">
+                <div class="img-placeholder" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">2</div>
+            </div>
+        </div>
+
+        <pre><code>.galeria img {
+    transition: box-shadow 0.3s ease;
+}
+
+.galeria img:hover {
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}</code></pre>
+    </div>
+
+    <div class="contenedor">
+        <h2>💡 Tips Importantes</h2>
+        <ul>
+            <li><strong>object-fit: cover</strong> es esencial para galerías con imágenes de diferentes proporciones</li>
+            <li><strong>gap</strong> es más limpio que usar margin en cada imagen</li>
+            <li><strong>flex-wrap: wrap</strong> hace la galería responsive automáticamente</li>
+            <li>Usa <code>border-radius</code> para esquinas redondeadas elegantes</li>
+            <li>Agrega <code>transition</code> para efectos suaves al hover</li>
+            <li>Considera <code>lazy loading</code> para galerías grandes (performance)</li>
+        </ul>
+    </div>
+
+    <div class="contenedor" style="background-color: #e8f5e9;">
+        <h2 style="color: #2e7d32; border-bottom-color: #2e7d32;">🎉 Resumen de la Galería</h2>
+        <div style="background: white; padding: 20px; border-radius: 5px;">
+            <h3>La Fórmula Perfecta:</h3>
+            <pre><code>.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.galeria img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}</code></pre>
+            <p style="text-align: center; margin-top: 20px; font-size: 18px;">
+                ✅ <strong>Responsive</strong> ✅ <strong>Uniforme</strong> ✅ <strong>Profesional</strong> 🚀
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
