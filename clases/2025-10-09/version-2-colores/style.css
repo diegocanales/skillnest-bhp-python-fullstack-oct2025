@@ -1,0 +1,88 @@
+/* Estilos generales del body */
+body {
+    background-color: #f0f0f0;
+    color: #333333;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+/* Títulos principales */
+h1 {
+    color: #2c3e50;
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Subtítulos */
+h2 {
+    color: #3498db;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* Párrafos */
+p {
+    color: rgb(52, 73, 94);
+    font-size: 18px;
+    text-align: justify;
+}
+
+/* Listas */
+ul {
+    color: #16a085;
+}
+
+ol {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+li {
+    font-size: 18px;
+}
+
+/* Tabla */
+table {
+    background-color: white;
+    color: #2c3e50;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+td {
+    font-size: 18px;
+}
+
+/* Enlaces */
+a {
+    color: #e74c3c;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+/* Formulario - labels */
+label {
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+/* Formulario - inputs */
+input {
+    font-size: 16px;
+}
+
+textarea {
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+select {
+    font-size: 16px;
+}
+
