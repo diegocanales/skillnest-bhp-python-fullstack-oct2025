@@ -1,0 +1,156 @@
+/* Estilos generales del body */
+body {
+    background-color: #ecf0f1;
+    color: #333333;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Títulos principales */
+h1 {
+    color: #2c3e50;
+    font-size: 48px;
+    font-weight: bold;
+}
+
+/* Subtítulos */
+h2 {
+    color: #3498db;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* Todas las secciones */
+.seccion {
+    background-color: white;
+    color: #2c3e50;
+}
+
+/* Selector de ID: Presentación */
+#presentacion {
+    background-color: #3498db;
+}
+
+#presentacion h1 {
+    color: white;
+}
+
+#presentacion .subtitulo {
+    color: #ecf0f1;
+    font-size: 20px;
+    font-style: italic;
+}
+
+/* Selector descendente: párrafos dentro de secciones */
+.seccion p {
+    font-size: 18px;
+    text-align: justify;
+}
+
+/* Selector de clase específica */
+.lista-intereses {
+    color: #16a085;
+    text-align: left;
+}
+
+.lista-artistas {
+    color: #e74c3c;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Tabla con clase */
+.tabla-favoritos {
+    background-color: white;
+    color: #2c3e50;
+}
+
+.tabla-favoritos th {
+    background-color: #9b59b6;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.tabla-favoritos td {
+    font-size: 18px;
+}
+
+/* Selector de ID para el video */
+#video {
+    background-color: #f39c12;
+}
+
+#video h2 {
+    color: white;
+}
+
+.descripcion-video {
+    color: white;
+    font-weight: bold;
+}
+
+/* ID para la foto de perfil */
+#foto-perfil {
+    width: 200px;
+    height: 200px;
+}
+
+/* Enlaces de redes sociales */
+.enlace-red-social {
+    color: #3498db;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+/* Formulario con ID */
+#formulario-contacto {
+    background-color: #ecf0f1;
+}
+
+/* Campos del formulario */
+.campo-formulario {
+    text-align: left;
+}
+
+.campo-formulario label {
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+/* Selectores de atributo para inputs */
+input[type="text"] {
+    font-size: 16px;
+    color: #2c3e50;
+}
+
+input[type="email"] {
+    font-size: 16px;
+    color: #2c3e50;
+}
+
+input[type="number"] {
+    font-size: 16px;
+    color: #2c3e50;
+}
+
+/* Botón de enviar */
+.boton-enviar {
+    background-color: #27ae60;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Textarea */
+textarea {
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+}
+
+/* Select */
+select {
+    font-size: 16px;
+}
