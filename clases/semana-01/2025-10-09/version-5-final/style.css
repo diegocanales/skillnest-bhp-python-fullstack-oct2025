@@ -1,0 +1,322 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales del body */
+body {
+    background-color: #ecf0f1;
+    color: #333333;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Títulos principales */
+h1 {
+    color: #2c3e50;
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Subtítulos */
+h2 {
+    color: #3498db;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Todas las secciones */
+.seccion {
+    background-color: white;
+    color: #2c3e50;
+    margin: 30px auto;
+    padding: 40px;
+    border: 2px solid #bdc3c7;
+    border-radius: 15px;
+    width: 85%;
+    max-width: 900px;
+}
+
+/* Selector de ID: Presentación */
+#presentacion {
+    background-color: #3498db;
+    padding: 60px 40px;
+    margin-top: 0;
+    border: none;
+}
+
+#presentacion h1 {
+    color: white;
+    margin-bottom: 10px;
+    font-size: 56px;
+}
+
+#presentacion .subtitulo {
+    color: #ecf0f1;
+    font-size: 22px;
+    font-style: italic;
+}
+
+/* Párrafos dentro de secciones */
+.seccion p {
+    font-size: 18px;
+    text-align: justify;
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+/* Descripciones especiales */
+.descripcion-galeria,
+.descripcion-redes,
+.descripcion-contacto {
+    font-style: italic;
+    color: #7f8c8d;
+    margin-bottom: 25px;
+}
+
+.nota-imagen {
+    font-size: 14px;
+    color: #95a5a6;
+    font-style: italic;
+    margin-top: 15px;
+}
+
+/* Listas */
+.lista-intereses {
+    color: #16a085;
+    text-align: left;
+    margin-left: 40px;
+    list-style-type: square;
+}
+
+.lista-intereses li {
+    margin: 12px 0;
+    padding: 8px;
+    font-size: 18px;
+}
+
+.lista-artistas {
+    color: #e74c3c;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 40px;
+}
+
+.lista-artistas li {
+    margin: 15px 0;
+    padding: 12px;
+    border-left: 5px solid #e74c3c;
+    padding-left: 20px;
+    font-size: 20px;
+    background-color: #fadbd8;
+    border-radius: 5px;
+}
+
+/* Tabla con clase */
+.tabla-favoritos {
+    background-color: white;
+    color: #2c3e50;
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.tabla-favoritos th {
+    background-color: #9b59b6;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 18px;
+    border: none;
+}
+
+.tabla-favoritos td {
+    font-size: 18px;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+}
+
+.tabla-favoritos tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Selector de ID para el video */
+#video {
+    background-color: #f39c12;
+    padding: 40px;
+}
+
+#video h2 {
+    color: white;
+}
+
+.descripcion-video {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.contenedor-video {
+    margin: 20px auto;
+}
+
+/* Contenedor de imágenes */
+.contenedor-imagenes {
+    margin: 25px 0;
+}
+
+/* Imágenes de la galería */
+.imagen-galeria {
+    width: 250px;
+    height: 180px;
+    margin: 15px;
+    border: 4px solid #3498db;
+    border-radius: 10px;
+}
+
+/* ID para la foto de perfil */
+#foto-perfil {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 6px solid #9b59b6;
+    margin: 20px;
+}
+
+/* Contenedor de redes */
+.contenedor-redes {
+    margin: 30px 0;
+}
+
+/* Enlaces de redes sociales */
+.enlace-red-social {
+    color: white;
+    background-color: #3498db;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 15px 30px;
+    margin: 10px;
+    border-radius: 8px;
+    border: 2px solid #2980b9;
+    display: inline-block;
+}
+
+.enlace-red-social.instagram {
+    background-color: #e1306c;
+    border-color: #c13584;
+}
+
+.enlace-red-social.twitter {
+    background-color: #1da1f2;
+    border-color: #0c8de4;
+}
+
+.enlace-red-social.github {
+    background-color: #333333;
+    border-color: #181818;
+}
+
+.enlace-red-social.youtube {
+    background-color: #ff0000;
+    border-color: #cc0000;
+}
+
+/* Formulario con ID */
+#formulario-contacto {
+    background-color: #f8f9fa;
+    padding: 35px;
+    border-radius: 12px;
+    margin-top: 20px;
+    border: 2px solid #dee2e6;
+}
+
+/* Campos del formulario */
+.campo-formulario {
+    text-align: left;
+    margin: 25px 0;
+    padding: 10px 0;
+}
+
+.campo-formulario label {
+    color: #2c3e50;
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+/* Selectores de atributo para inputs */
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+    font-size: 16px;
+    color: #2c3e50;
+    padding: 12px 15px;
+    border: 2px solid #bdc3c7;
+    border-radius: 6px;
+    width: 100%;
+    margin-top: 8px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin: 0 8px 0 20px;
+}
+
+/* Botón de enviar */
+.boton-enviar {
+    background-color: #27ae60;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 18px 50px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.campo-boton {
+    text-align: center;
+}
+
+/* Textarea */
+textarea {
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    padding: 12px 15px;
+    border: 2px solid #bdc3c7;
+    border-radius: 6px;
+    width: 100%;
+    margin-top: 8px;
+    resize: vertical;
+}
+
+/* Select */
+select {
+    font-size: 16px;
+    padding: 12px 15px;
+    border: 2px solid #bdc3c7;
+    border-radius: 6px;
+    width: 100%;
+    margin-top: 8px;
+}
+

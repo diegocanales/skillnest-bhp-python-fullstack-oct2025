@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Portafolio - Juan Pérez</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Presentación Principal -->
-    <div>
+    <div id="presentacion" class="seccion">
         <h1>Juan Pérez</h1>
-        <p>Amante de la tecnología, los videojuegos y la buena música</p>
+        <p class="subtitulo">Amante de la tecnología, los videojuegos y la buena música</p>
     </div>
 
     <!-- Sobre Mí -->
-    <div>
+    <div id="sobre-mi" class="seccion">
         <h2>Sobre Mí</h2>
         <p>
             ¡Hola! Soy Juan, tengo 22 años y vivo en Santiago, Chile. 
@@ -25,9 +26,9 @@
     </div>
 
     <!-- Mis Intereses -->
-    <div>
+    <div id="intereses" class="seccion">
         <h2>Mis Intereses</h2>
-        <ul>
+        <ul class="lista-intereses">
             <li>Programación y Tecnología</li>
             <li>Videojuegos</li>
             <li>Música (Rock y Electrónica)</li>
@@ -38,9 +39,9 @@
     </div>
 
     <!-- Top 5 Artistas Favoritos -->
-    <div>
+    <div id="artistas" class="seccion">
         <h2>Top 5 Artistas Favoritos</h2>
-        <ol>
+        <ol class="lista-artistas">
             <li>Imagine Dragons</li>
             <li>The Weeknd</li>
             <li>Coldplay</li>
@@ -50,9 +51,9 @@
     </div>
 
     <!-- Mis Favoritos (Tabla) -->
-    <div>
+    <div id="favoritos" class="seccion">
         <h2>Mis Favoritos</h2>
-        <table>
+        <table class="tabla-favoritos">
             <tr>
                 <th>Categoría</th>
                 <th>Favorito</th>
@@ -81,9 +82,9 @@
     </div>
 
     <!-- Mi Canción Favorita -->
-    <div>
+    <div id="video" class="seccion">
         <h2>Mi Canción Favorita</h2>
-        <p>Believer - Imagine Dragons</p>
+        <p class="descripcion-video">Believer - Imagine Dragons</p>
         <iframe 
             width="560" 
             height="315" 
@@ -94,56 +95,52 @@
     </div>
 
     <!-- Galería Personal -->
-    <div>
+    <div id="galeria" class="seccion">
         <h2>Galería Personal</h2>
-        <img src="https://via.placeholder.com/300x200/3498db/ffffff?text=Tecnologia" alt="Tecnología">
-        <img src="https://via.placeholder.com/300x200/e74c3c/ffffff?text=Musica" alt="Música">
-        <img src="https://via.placeholder.com/300x200/2ecc71/ffffff?text=Videojuegos" alt="Videojuegos">
+        <div class="contenedor-imagenes">
+            <img class="imagen-galeria" src="https://via.placeholder.com/300x200/3498db/ffffff?text=Tecnologia" alt="Tecnología">
+            <img class="imagen-galeria" src="https://via.placeholder.com/300x200/e74c3c/ffffff?text=Musica" alt="Música">
+            <img class="imagen-galeria" src="https://via.placeholder.com/300x200/2ecc71/ffffff?text=Videojuegos" alt="Videojuegos">
+        </div>
     </div>
 
     <!-- Foto de Perfil -->
-    <div>
+    <div id="perfil" class="seccion">
         <h2>Mi Foto</h2>
-        <img src="https://via.placeholder.com/200x200/9b59b6/ffffff?text=Juan+P" alt="Foto de Juan Pérez">
+        <img id="foto-perfil" src="https://via.placeholder.com/200x200/9b59b6/ffffff?text=Juan+P" alt="Foto de Juan Pérez">
     </div>
 
     <!-- Mis Redes Sociales -->
-    <div>
+    <div id="redes" class="seccion">
         <h2>Mis Redes Sociales</h2>
-        <p>
-            <a href="https://www.instagram.com" target="_blank">Instagram</a>
-        </p>
-        <p>
-            <a href="https://www.twitter.com" target="_blank">Twitter</a>
-        </p>
-        <p>
-            <a href="https://www.github.com" target="_blank">GitHub</a>
-        </p>
-        <p>
-            <a href="https://www.youtube.com" target="_blank">YouTube</a>
-        </p>
+        <div class="contenedor-redes">
+            <a class="enlace-red-social" href="https://www.instagram.com" target="_blank">Instagram</a>
+            <a class="enlace-red-social" href="https://www.twitter.com" target="_blank">Twitter</a>
+            <a class="enlace-red-social" href="https://www.github.com" target="_blank">GitHub</a>
+            <a class="enlace-red-social" href="https://www.youtube.com" target="_blank">YouTube</a>
+        </div>
     </div>
 
     <!-- Formulario de Contacto -->
-    <div>
+    <div id="contacto" class="seccion">
         <h2>Contáctame</h2>
-        <form>
-            <div>
+        <form id="formulario-contacto">
+            <div class="campo-formulario">
                 <label for="nombre">Nombre:</label>
                 <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
             </div>
 
-            <div>
+            <div class="campo-formulario">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" placeholder="tu@email.com">
             </div>
 
-            <div>
+            <div class="campo-formulario">
                 <label for="edad">Edad:</label>
                 <input type="number" id="edad" name="edad" placeholder="18">
             </div>
 
-            <div>
+            <div class="campo-formulario">
                 <label>Género:</label>
                 <input type="radio" id="masculino" name="genero" value="masculino">
                 <label for="masculino">Masculino</label>
@@ -155,7 +152,7 @@
                 <label for="otro">Otro</label>
             </div>
 
-            <div>
+            <div class="campo-formulario">
                 <label>Tus intereses:</label>
                 
                 <input type="checkbox" id="tecnologia" name="intereses" value="tecnologia">
@@ -171,7 +168,7 @@
                 <label for="musica">Música</label>
             </div>
 
-            <div>
+            <div class="campo-formulario">
                 <label for="pais">País:</label>
                 <select id="pais" name="pais">
                     <option value="">Selecciona tu país</option>
@@ -183,13 +180,13 @@
                 </select>
             </div>
 
-            <div>
+            <div class="campo-formulario">
                 <label for="mensaje">Mensaje:</label>
                 <textarea id="mensaje" name="mensaje" rows="5" cols="40" placeholder="Escribe tu mensaje aquí..."></textarea>
             </div>
 
-            <div>
-                <input type="submit" value="Enviar Mensaje">
+            <div class="campo-formulario">
+                <input type="submit" value="Enviar Mensaje" class="boton-enviar">
             </div>
         </form>
     </div>

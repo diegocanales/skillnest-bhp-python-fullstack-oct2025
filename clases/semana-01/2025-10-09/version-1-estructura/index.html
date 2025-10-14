@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio - Juan Pérez</title>
+</head>
+<body>
+    <!-- Presentación Principal -->
+    <div>
+        <h1>Juan Pérez</h1>
+        <p>Amante de la tecnología, los videojuegos y la buena música</p>
+    </div>
+
+    <!-- Sobre Mí -->
+    <div>
+        <h2>Sobre Mí</h2>
+        <p>
+            ¡Hola! Soy Juan, tengo 22 años y vivo en Santiago, Chile. 
+            Me apasiona aprender cosas nuevas, especialmente todo lo relacionado 
+            con tecnología y programación. En mi tiempo libre disfruto jugando 
+            videojuegos, escuchando música y viendo series. También me gusta 
+            salir a caminar y pasar tiempo con mis amigos.
+        </p>
+    </div>
+
+    <!-- Mis Intereses -->
+    <div>
+        <h2>Mis Intereses</h2>
+        <ul>
+            <li>Programación y Tecnología</li>
+            <li>Videojuegos</li>
+            <li>Música (Rock y Electrónica)</li>
+            <li>Series y Películas</li>
+            <li>Fotografía</li>
+            <li>Deportes (Fútbol)</li>
+        </ul>
+    </div>
+
+    <!-- Top 5 Artistas Favoritos -->
+    <div>
+        <h2>Top 5 Artistas Favoritos</h2>
+        <ol>
+            <li>Imagine Dragons</li>
+            <li>The Weeknd</li>
+            <li>Coldplay</li>
+            <li>Daft Punk</li>
+            <li>Arctic Monkeys</li>
+        </ol>
+    </div>
+
+    <!-- Mis Favoritos (Tabla) -->
+    <div>
+        <h2>Mis Favoritos</h2>
+        <table>
+            <tr>
+                <th>Categoría</th>
+                <th>Favorito</th>
+            </tr>
+            <tr>
+                <td>Película</td>
+                <td>Inception</td>
+            </tr>
+            <tr>
+                <td>Serie</td>
+                <td>Stranger Things</td>
+            </tr>
+            <tr>
+                <td>Videojuego</td>
+                <td>The Legend of Zelda</td>
+            </tr>
+            <tr>
+                <td>Comida</td>
+                <td>Pizza</td>
+            </tr>
+            <tr>
+                <td>Color</td>
+                <td>Azul</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Mi Canción Favorita -->
+    <div>
+        <h2>Mi Canción Favorita</h2>
+        <p>Believer - Imagine Dragons</p>
+        <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/7wtfhZwyrcc" 
+            frameborder="0" 
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <!-- Galería Personal -->
+    <div>
+        <h2>Galería Personal</h2>
+        <img src="https://via.placeholder.com/300x200/3498db/ffffff?text=Tecnologia" alt="Tecnología">
+        <img src="https://via.placeholder.com/300x200/e74c3c/ffffff?text=Musica" alt="Música">
+        <img src="https://via.placeholder.com/300x200/2ecc71/ffffff?text=Videojuegos" alt="Videojuegos">
+    </div>
+
+    <!-- Foto de Perfil -->
+    <div>
+        <h2>Mi Foto</h2>
+        <img src="https://via.placeholder.com/200x200/9b59b6/ffffff?text=Juan+P" alt="Foto de Juan Pérez">
+    </div>
+
+    <!-- Mis Redes Sociales -->
+    <div>
+        <h2>Mis Redes Sociales</h2>
+        <p>
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+        </p>
+        <p>
+            <a href="https://www.twitter.com" target="_blank">Twitter</a>
+        </p>
+        <p>
+            <a href="https://www.github.com" target="_blank">GitHub</a>
+        </p>
+        <p>
+            <a href="https://www.youtube.com" target="_blank">YouTube</a>
+        </p>
+    </div>
+
+    <!-- Formulario de Contacto -->
+    <div>
+        <h2>Contáctame</h2>
+        <img width="300" height="200" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgVfHORQFLyUf_rNove-xUmxIskDeMJ63REz_YIMQ6S0vCyQdkBvJos4igKspvCgpqnpy8h0xM--1uckzZIxDgyoHy37-MowkF-YzvVx8"/>
+        <form>
+            <div>
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+            </div>
+
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="tu@email.com">
+            </div>
+
+            <div>
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" placeholder="18">
+            </div>
+
+            <div>
+                <label>Género:</label>
+                <input type="radio" id="masculino" name="genero" value="masculino">
+                <label for="masculino">Masculino</label>
+                
+                <input type="radio" id="femenino" name="genero" value="femenino">
+                <label for="femenino">Femenino</label>
+                
+                <input type="radio" id="otro" name="genero" value="otro">
+                <label for="otro">Otro</label>
+            </div>
+
+            <div>
+                <label>Tus intereses:</label>
+                
+                <input type="checkbox" id="tecnologia" name="intereses" value="tecnologia">
+                <label for="tecnologia">Tecnología</label>
+                
+                <input type="checkbox" id="arte" name="intereses" value="arte">
+                <label for="arte">Arte</label>
+                
+                <input type="checkbox" id="deportes" name="intereses" value="deportes">
+                <label for="deportes">Deportes</label>
+                
+                <input type="checkbox" id="musica" name="intereses" value="musica">
+                <label for="musica">Música</label>
+            </div>
+
+            <div>
+                <label for="pais">País:</label>
+                <select id="pais" name="pais">
+                    <option value="">Selecciona tu país</option>
+                    <option value="chile">Chile</option>
+                    <option value="argentina">Argentina</option>
+                    <option value="peru">Perú</option>
+                    <option value="colombia">Colombia</option>
+                    <option value="mexico">México</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" cols="40" placeholder="Escribe tu mensaje aquí..."></textarea>
+            </div>
+
+            <div>
+                <input type="submit" value="Enviar Mensaje">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+

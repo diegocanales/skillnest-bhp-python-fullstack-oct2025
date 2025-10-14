@@ -1,0 +1,260 @@
+<!--
+Ejercicio: Botones Estilizados
+
+Objetivo:
+Crear tres botones diferentes con estilos personalizados usando CSS.
+Practicar el uso de:
+- Propiedades de tamaño (width, height)
+- Bordes (border, border-radius)
+- Sombras (box-shadow)
+- Modelo de caja (padding, margin)
+- Colores y efectos hover
+
+Descripción:
+Crear tres botones con estilos específicos:
+1. Botón "Search" - Rectangular con bordes
+2. Botón "+" - Circular perfecto
+3. Botón "Crear Cuenta" - Con sombra y efecto hover
+
+Habilidades que se practican:
+- Border y border-radius
+- Box-shadow para efectos de profundidad
+- Crear formas circulares con CSS
+- Estados hover para interactividad
+- Centrado de elementos
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Botones Estilizados</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        /* Contenedor de botones */
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+        }
+
+        /* Sección de cada botón */
+        .button-section {
+            width: 100%;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .button-section h3 {
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 18px;
+        }
+
+        /* BOTÓN 1: Search - Rectangular con bordes */
+        .btn-search {
+            width: 150px;
+            height: 45px;
+            background-color: #4CAF50;
+            color: white;
+            border: 2px solid #45a049;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-search:hover {
+            background-color: #45a049;
+            border-color: #3d8b40;
+            transform: translateY(-2px);
+        }
+
+        .btn-search:active {
+            transform: translateY(0);
+        }
+
+        /* BOTÓN 2: + (Más) - Circular perfecto */
+        .btn-plus {
+            width: 60px;
+            height: 60px;
+            background-color: #2196F3;
+            color: white;
+            border: 3px solid #1976D2;
+            border-radius: 50%; /* Esto lo hace circular */
+            font-size: 32px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+
+        .btn-plus:hover {
+            background-color: #1976D2;
+            border-color: #1565C0;
+            transform: rotate(90deg) scale(1.1);
+        }
+
+        .btn-plus:active {
+            transform: rotate(90deg) scale(1);
+        }
+
+        /* BOTÓN 3: Crear Cuenta - Con sombra */
+        .btn-create {
+            width: 200px;
+            height: 50px;
+            background-color: #FF5722;
+            color: white;
+            border: none;
+            border-radius: 25px; /* Bordes muy redondeados */
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(255, 87, 34, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-create:hover {
+            background-color: #E64A19;
+            box-shadow: 0 6px 15px rgba(255, 87, 34, 0.6);
+            transform: translateY(-3px);
+        }
+
+        .btn-create:active {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 8px rgba(255, 87, 34, 0.4);
+        }
+
+        /* Información adicional */
+        .properties {
+            margin-top: 15px;
+            text-align: left;
+            background-color: white;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .properties code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #e91e63;
+        }
+
+        .properties ul {
+            list-style-position: inside;
+            margin-top: 10px;
+        }
+
+        .properties li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Botones Estilizados con CSS</h1>
+        
+        <div class="buttons-container">
+            <!-- Botón 1: Search -->
+            <div class="button-section">
+                <h3>Botón 1: Search</h3>
+                <button class="btn-search">Search</button>
+                <div class="properties">
+                    <strong>Propiedades CSS:</strong>
+                    <ul>
+                        <li><code>width: 150px; height: 45px;</code></li>
+                        <li><code>border: 2px solid #45a049;</code></li>
+                        <li><code>border-radius: 5px;</code></li>
+                        <li><code>background-color: #4CAF50;</code></li>
+                        <li>Efecto hover con transformación</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Botón 2: Plus (circular) -->
+            <div class="button-section">
+                <h3>Botón 2: Circular (+)</h3>
+                <button class="btn-plus">+</button>
+                <div class="properties">
+                    <strong>Propiedades CSS:</strong>
+                    <ul>
+                        <li><code>width: 60px; height: 60px;</code> (mismo valor)</li>
+                        <li><code>border-radius: 50%;</code> (hace el círculo)</li>
+                        <li><code>border: 3px solid #1976D2;</code></li>
+                        <li>Efecto hover con rotación</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Botón 3: Crear Cuenta -->
+            <div class="button-section">
+                <h3>Botón 3: Crear Cuenta</h3>
+                <button class="btn-create">Crear Cuenta</button>
+                <div class="properties">
+                    <strong>Propiedades CSS:</strong>
+                    <ul>
+                        <li><code>width: 200px; height: 50px;</code></li>
+                        <li><code>border-radius: 25px;</code> (muy redondeado)</li>
+                        <li><code>box-shadow: 0 4px 10px rgba(255, 87, 34, 0.4);</code></li>
+                        <li>Efecto hover con sombra aumentada</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 30px; padding: 20px; background-color: #e8f5e9; border-radius: 8px;">
+            <h3 style="color: #2e7d32; margin-bottom: 10px;">💡 Conceptos Clave</h3>
+            <ul style="color: #555; line-height: 1.8;">
+                <li><strong>border-radius: 50%</strong> - Crea formas circulares perfectas cuando width = height</li>
+                <li><strong>box-shadow</strong> - Añade profundidad y efectos visuales</li>
+                <li><strong>transition</strong> - Suaviza los cambios en hover</li>
+                <li><strong>transform</strong> - Permite mover, rotar y escalar elementos</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+

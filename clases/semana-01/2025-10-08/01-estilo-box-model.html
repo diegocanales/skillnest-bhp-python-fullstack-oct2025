@@ -1,0 +1,155 @@
+<!--
+Ejercicio: Estilo Box Model
+
+Objetivo:
+Aplicar propiedades CSS de color y texto a elementos HTML para recrear
+un diseño específico. Practicar el uso de:
+- Propiedades de color (color, background-color)
+- Propiedades de texto (text-align, text-decoration, font-style)
+- Selectores básicos (elemento, clase, id)
+
+Descripción:
+Debes recrear el diseño mostrado en la imagen de referencia aplicando
+estilos CSS a títulos h1, h2 y h3. Cada título debe tener combinaciones
+específicas de color de texto, color de fondo, alineación y decoración.
+
+Habilidades que se practican:
+- Sintaxis CSS básica
+- Selectores por elemento
+- Propiedades de color
+- Propiedades de texto
+- Combinación de múltiples propiedades
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Estilo Box Model</title>
+    <style>
+        /* Reset básico para consistencia */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        /* Estilo para h1 - Fondo negro, texto blanco, centrado */
+        h1 {
+            color: white;
+            background-color: black;
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+
+        /* Estilo para h2 - Texto rojo, subrayado, alineado a la derecha */
+        h2 {
+            color: red;
+            text-decoration: underline;
+            text-align: right;
+            padding: 15px;
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        /* Estilo para h3 - Texto azul, cursiva, centrado, fondo amarillo claro */
+        h3 {
+            color: blue;
+            font-style: italic;
+            text-align: center;
+            background-color: lightyellow;
+            padding: 12px;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        /* Contenedor para mejor presentación */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilos adicionales para párrafos informativos */
+        p {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .info {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-left: 4px solid #2196f3;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Título Principal - H1</h1>
+        
+        <div class="info">
+            <p><strong>Propiedades aplicadas a H1:</strong></p>
+            <ul>
+                <li>color: white</li>
+                <li>background-color: black</li>
+                <li>text-align: center</li>
+            </ul>
+        </div>
+
+        <h2>Subtítulo Importante - H2</h2>
+        
+        <div class="info">
+            <p><strong>Propiedades aplicadas a H2:</strong></p>
+            <ul>
+                <li>color: red</li>
+                <li>text-decoration: underline</li>
+                <li>text-align: right</li>
+            </ul>
+        </div>
+
+        <h3>Subtítulo Secundario - H3</h3>
+        
+        <div class="info">
+            <p><strong>Propiedades aplicadas a H3:</strong></p>
+            <ul>
+                <li>color: blue</li>
+                <li>font-style: italic</li>
+                <li>text-align: center</li>
+                <li>background-color: lightyellow</li>
+            </ul>
+        </div>
+
+        <p>
+            Este ejercicio demuestra cómo aplicar diferentes propiedades CSS
+            para estilizar títulos de manera efectiva. Cada nivel de título
+            (h1, h2, h3) tiene su propio conjunto de estilos que los hace
+            visualmente distintos y fácilmente identificables.
+        </p>
+
+        <p>
+            <strong>Conceptos clave aprendidos:</strong>
+        </p>
+        <ul>
+            <li>Diferencia entre <code>color</code> (texto) y <code>background-color</code> (fondo)</li>
+            <li>Uso de <code>text-align</code> para alinear contenido</li>
+            <li>Aplicación de <code>text-decoration</code> para efectos de texto</li>
+            <li>Uso de <code>font-style</code> para cursiva</li>
+        </ul>
+    </div>
+</body>
+</html>
+

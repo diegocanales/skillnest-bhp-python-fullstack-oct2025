@@ -1,0 +1,250 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales del body */
+body {
+    background-color: #ecf0f1;
+    color: #333333;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Títulos principales */
+h1 {
+    color: #2c3e50;
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Subtítulos */
+h2 {
+    color: #3498db;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Todas las secciones */
+.seccion {
+    background-color: white;
+    color: #2c3e50;
+    margin: 30px auto;
+    padding: 30px;
+    border: 2px solid #bdc3c7;
+    border-radius: 10px;
+    width: 80%;
+}
+
+/* Selector de ID: Presentación */
+#presentacion {
+    background-color: #3498db;
+    padding: 50px 30px;
+    margin-top: 0;
+}
+
+#presentacion h1 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+#presentacion .subtitulo {
+    color: #ecf0f1;
+    font-size: 20px;
+    font-style: italic;
+}
+
+/* Párrafos dentro de secciones */
+.seccion p {
+    font-size: 18px;
+    text-align: justify;
+    line-height: 1.6;
+    margin: 15px 0;
+}
+
+/* Listas */
+.lista-intereses {
+    color: #16a085;
+    text-align: left;
+    margin-left: 40px;
+}
+
+.lista-intereses li {
+    margin: 10px 0;
+    padding: 5px;
+}
+
+.lista-artistas {
+    color: #e74c3c;
+    font-weight: bold;
+    text-align: left;
+    margin-left: 40px;
+}
+
+.lista-artistas li {
+    margin: 12px 0;
+    padding: 8px;
+    border-left: 4px solid #e74c3c;
+    padding-left: 15px;
+}
+
+/* Tabla con clase */
+.tabla-favoritos {
+    background-color: white;
+    color: #2c3e50;
+    margin: 20px auto;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.tabla-favoritos th {
+    background-color: #9b59b6;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 15px;
+    border: 2px solid #8e44ad;
+}
+
+.tabla-favoritos td {
+    font-size: 18px;
+    padding: 12px;
+    border: 2px solid #bdc3c7;
+}
+
+/* Selector de ID para el video */
+#video {
+    background-color: #f39c12;
+    padding: 40px;
+}
+
+#video h2 {
+    color: white;
+}
+
+.descripcion-video {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Contenedor de imágenes */
+.contenedor-imagenes {
+    margin: 20px 0;
+}
+
+/* Imágenes de la galería */
+.imagen-galeria {
+    width: 250px;
+    height: 180px;
+    margin: 10px;
+    border: 3px solid #3498db;
+    border-radius: 8px;
+}
+
+/* ID para la foto de perfil */
+#foto-perfil {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 5px solid #9b59b6;
+    margin: 20px;
+}
+
+/* Contenedor de redes */
+.contenedor-redes {
+    margin: 20px;
+}
+
+/* Enlaces de redes sociales */
+.enlace-red-social {
+    color: white;
+    background-color: #3498db;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 12px 25px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 2px solid #2980b9;
+    display: inline-block;
+}
+
+/* Formulario con ID */
+#formulario-contacto {
+    background-color: #ecf0f1;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+/* Campos del formulario */
+.campo-formulario {
+    text-align: left;
+    margin: 20px 0;
+    padding: 10px;
+}
+
+.campo-formulario label {
+    color: #2c3e50;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+/* Selectores de atributo para inputs */
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+    font-size: 16px;
+    color: #2c3e50;
+    padding: 10px;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin: 0 5px 0 15px;
+}
+
+/* Botón de enviar */
+.boton-enviar {
+    background-color: #27ae60;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* Textarea */
+textarea {
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    padding: 10px;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+/* Select */
+select {
+    font-size: 16px;
+    padding: 10px;
+    border: 2px solid #bdc3c7;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 5px;
+}
+

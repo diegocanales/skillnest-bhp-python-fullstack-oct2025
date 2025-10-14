@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio - Juan Pérez</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Presentación Principal -->
+    <div id="presentacion" class="seccion">
+        <h1>Juan Pérez</h1>
+        <p class="subtitulo">Amante de la tecnología, los videojuegos y la buena música</p>
+    </div>
+
+    <!-- Sobre Mí -->
+    <div id="sobre-mi" class="seccion">
+        <h2>Sobre Mí</h2>
+        <p>
+            ¡Hola! Soy <strong>Juan</strong>, tengo 22 años y vivo en Santiago, Chile. 
+            Me apasiona aprender cosas nuevas, especialmente todo lo relacionado 
+            con tecnología y programación. En mi tiempo libre disfruto jugando 
+            videojuegos, escuchando música y viendo series. También me gusta 
+            salir a caminar y pasar tiempo con mis amigos.
+        </p>
+    </div>
+
+    <!-- Mis Intereses -->
+    <div id="intereses" class="seccion">
+        <h2>Mis Intereses</h2>
+        <ul class="lista-intereses">
+            <li>Programación y Tecnología</li>
+            <li>Videojuegos</li>
+            <li>Música (Rock y Electrónica)</li>
+            <li>Series y Películas</li>
+            <li>Fotografía</li>
+            <li>Deportes (Fútbol)</li>
+        </ul>
+    </div>
+
+    <!-- Top 5 Artistas Favoritos -->
+    <div id="artistas" class="seccion">
+        <h2>Top 5 Artistas Favoritos</h2>
+        <ol class="lista-artistas">
+            <li>Imagine Dragons</li>
+            <li>The Weeknd</li>
+            <li>Coldplay</li>
+            <li>Daft Punk</li>
+            <li>Arctic Monkeys</li>
+        </ol>
+    </div>
+
+    <!-- Mis Favoritos (Tabla) -->
+    <div id="favoritos" class="seccion">
+        <h2>Mis Favoritos</h2>
+        <table class="tabla-favoritos">
+            <tr>
+                <th>Categoría</th>
+                <th>Favorito</th>
+            </tr>
+            <tr>
+                <td>Película</td>
+                <td>Inception</td>
+            </tr>
+            <tr>
+                <td>Serie</td>
+                <td>Stranger Things</td>
+            </tr>
+            <tr>
+                <td>Videojuego</td>
+                <td>The Legend of Zelda</td>
+            </tr>
+            <tr>
+                <td>Comida</td>
+                <td>Pizza</td>
+            </tr>
+            <tr>
+                <td>Color</td>
+                <td>Azul</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Mi Canción Favorita -->
+    <div id="video" class="seccion">
+        <h2>Mi Canción Favorita</h2>
+        <p class="descripcion-video">Believer - Imagine Dragons</p>
+        <div class="contenedor-video">
+            <iframe 
+                width="560" 
+                height="315" 
+                src="https://www.youtube.com/embed/7wtfhZwyrcc" 
+                frameborder="0" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+    <!-- Galería Personal -->
+    <div id="galeria" class="seccion">
+        <h2>Galería Personal</h2>
+        <p class="descripcion-galeria">Algunas cosas que me apasionan</p>
+        <div class="contenedor-imagenes">
+            <img class="imagen-galeria" src="https://via.placeholder.com/300x200/3498db/ffffff?text=Tecnologia" alt="Tecnología">
+            <img class="imagen-galeria" src="https://via.placeholder.com/300x200/e74c3c/ffffff?text=Musica" alt="Música">
+            <img class="imagen-galeria" src="https://via.placeholder.com/300x200/2ecc71/ffffff?text=Videojuegos" alt="Videojuegos">
+        </div>
+    </div>
+
+    <!-- Foto de Perfil -->
+    <div id="perfil" class="seccion">
+        <h2>Mi Foto</h2>
+        <img id="foto-perfil" src="https://via.placeholder.com/200x200/9b59b6/ffffff?text=Juan+P" alt="Foto de Juan Pérez">
+        <p class="nota-imagen">Puedes reemplazar esta imagen con tu propia foto</p>
+    </div>
+
+    <!-- Mis Redes Sociales -->
+    <div id="redes" class="seccion">
+        <h2>Mis Redes Sociales</h2>
+        <p class="descripcion-redes">Sígueme en mis redes</p>
+        <div class="contenedor-redes">
+            <a class="enlace-red-social instagram" href="https://www.instagram.com" target="_blank">📷 Instagram</a>
+            <a class="enlace-red-social twitter" href="https://www.twitter.com" target="_blank">🐦 Twitter</a>
+            <a class="enlace-red-social github" href="https://www.github.com" target="_blank">💻 GitHub</a>
+            <a class="enlace-red-social youtube" href="https://www.youtube.com" target="_blank">▶️ YouTube</a>
+        </div>
+    </div>
+
+    <!-- Formulario de Contacto -->
+    <div id="contacto" class="seccion">
+        <h2>Contáctame</h2>
+        <p class="descripcion-contacto">¿Quieres conversar? ¡Escríbeme!</p>
+        <form id="formulario-contacto">
+            <div class="campo-formulario">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" name="edad" placeholder="18">
+            </div>
+
+            <div class="campo-formulario">
+                <label>Género:</label><br>
+                <input type="radio" id="masculino" name="genero" value="masculino">
+                <label for="masculino">Masculino</label>
+                
+                <input type="radio" id="femenino" name="genero" value="femenino">
+                <label for="femenino">Femenino</label>
+                
+                <input type="radio" id="otro" name="genero" value="otro">
+                <label for="otro">Otro</label>
+            </div>
+
+            <div class="campo-formulario">
+                <label>Tus intereses:</label><br>
+                
+                <input type="checkbox" id="tecnologia" name="intereses" value="tecnologia">
+                <label for="tecnologia">Tecnología</label>
+                
+                <input type="checkbox" id="arte" name="intereses" value="arte">
+                <label for="arte">Arte</label>
+                
+                <input type="checkbox" id="deportes" name="intereses" value="deportes">
+                <label for="deportes">Deportes</label>
+                
+                <input type="checkbox" id="musica" name="intereses" value="musica">
+                <label for="musica">Música</label>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="pais">País:</label>
+                <select id="pais" name="pais">
+                    <option value="">Selecciona tu país</option>
+                    <option value="chile">Chile</option>
+                    <option value="argentina">Argentina</option>
+                    <option value="peru">Perú</option>
+                    <option value="colombia">Colombia</option>
+                    <option value="mexico">México</option>
+                </select>
+            </div>
+
+            <div class="campo-formulario">
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí..."></textarea>
+            </div>
+
+            <div class="campo-formulario campo-boton">
+                <input type="submit" value="Enviar Mensaje" class="boton-enviar">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
+

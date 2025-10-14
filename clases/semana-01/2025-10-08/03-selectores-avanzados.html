@@ -1,0 +1,414 @@
+<!--
+Ejercicio: Selectores CSS Avanzados
+
+Objetivo:
+Practicar el uso de diferentes tipos de selectores CSS para aplicar
+estilos específicos a elementos HTML. Este ejercicio cubre:
+- Selectores por elemento
+- Selectores por clase
+- Selectores por ID
+- Selectores descendentes
+- Selectores de atributo
+- Combinación de selectores
+
+Descripción:
+Crear una página web que demuestre el uso de múltiples tipos de
+selectores CSS para estilizar diferentes elementos de manera específica.
+
+Habilidades que se practican:
+- Sintaxis de selectores CSS
+- Especificidad de selectores
+- Selectores descendentes y combinados
+- Selectores de atributo
+- Organización del código CSS
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Selectores Avanzados</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Selector por elemento - Aplica a TODO el body */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        /* Selector por ID - Elemento único */
+        #main-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Selector por elemento */
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 32px;
+        }
+
+        h2 {
+            color: #34495e;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+
+        /* Selector por clase */
+        .highlight {
+            background-color: #fff3cd;
+            padding: 3px 6px;
+            border-radius: 3px;
+        }
+
+        .important {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .info-box {
+            background-color: #d1ecf1;
+            border-left: 4px solid #0c5460;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .success-box {
+            background-color: #d4edda;
+            border-left: 4px solid #155724;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        /* Selector descendente - p dentro de .info-box */
+        .info-box p {
+            color: #0c5460;
+            margin: 0;
+        }
+
+        .success-box p {
+            color: #155724;
+            margin: 0;
+        }
+
+        /* Selector descendente directo - solo hijos directos */
+        #main-container > p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        /* Selector de atributo - inputs por tipo */
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #bdc3c7;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #3498db;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        input[type="submit"] {
+            background-color: #27ae60;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #229954;
+        }
+
+        /* Combinación de selectores - div con clase specific dentro de form */
+        form .specific {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        /* Selector de múltiples elementos */
+        h3, h4 {
+            color: #8e44ad;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        /* Lista con estilo específico */
+        ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        /* Selector descendente para listas dentro de .success-box */
+        .success-box ul li {
+            color: #155724;
+        }
+
+        /* Código inline */
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #e74c3c;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* Tablas */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #e8f4f8;
+        }
+
+        /* Botones con diferentes clases */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: #95a5a6;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background-color: #7f8c8d;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #ecf0f1;
+            text-align: center;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div id="main-container">
+        <h1>🎯 Selectores CSS Avanzados</h1>
+
+        <p>
+            Este documento demuestra el uso de <span class="highlight">diferentes selectores CSS</span> 
+            para aplicar estilos específicos a elementos HTML. Es <span class="important">importante</span> 
+            entender cómo funcionan para crear diseños efectivos.
+        </p>
+
+        <!-- Sección 1: Selectores Básicos -->
+        <h2>1. Selectores Básicos</h2>
+
+        <div class="info-box">
+            <p>
+                <strong>Selector por elemento:</strong> Aplica estilos a todos los elementos de ese tipo. 
+                Ejemplo: <code>h1 { color: blue; }</code>
+            </p>
+        </div>
+
+        <div class="success-box">
+            <p>
+                <strong>Selector por clase:</strong> Aplica estilos a elementos con una clase específica. 
+                Ejemplo: <code>.highlight { background-color: yellow; }</code>
+            </p>
+            <ul>
+                <li>Se puede aplicar a múltiples elementos</li>
+                <li>Se selecciona con un punto (.)</li>
+                <li>Reutilizable en toda la página</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <p>
+                <strong>Selector por ID:</strong> Aplica estilos a un elemento único. 
+                Ejemplo: <code>#main-container { max-width: 900px; }</code>
+            </p>
+        </div>
+
+        <!-- Sección 2: Selectores Avanzados -->
+        <h2>2. Selectores Avanzados</h2>
+
+        <h3>Tabla de Especificidad</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Selector</th>
+                    <th>Ejemplo</th>
+                    <th>Especificidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Comodín (*)</td>
+                    <td><code>* { margin: 0; }</code></td>
+                    <td>0.1</td>
+                </tr>
+                <tr>
+                    <td>Elemento</td>
+                    <td><code>p { color: blue; }</code></td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>Clase</td>
+                    <td><code>.highlight { background: yellow; }</code></td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>ID</td>
+                    <td><code>#container { width: 100%; }</code></td>
+                    <td>100</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Selectores Descendentes</h3>
+        <p>
+            El selector descendente selecciona elementos que están dentro de otros. 
+            Por ejemplo, <code>.info-box p</code> selecciona todos los párrafos dentro 
+            de elementos con la clase <code>info-box</code>.
+        </p>
+
+        <!-- Sección 3: Formulario con selectores de atributo -->
+        <h2>3. Formulario - Selectores de Atributo</h2>
+
+        <form class="specific">
+            <h3>Ejemplo de Formulario</h3>
+            <p>Los inputs tienen estilos diferentes según su atributo <code>type</code>:</p>
+
+            <label for="nombre">Nombre (type="text"):</label>
+            <input type="text" id="nombre" placeholder="Tu nombre">
+
+            <label for="email">Email (type="email"):</label>
+            <input type="email" id="email" placeholder="tu@email.com">
+
+            <input type="submit" value="Enviar Formulario">
+        </form>
+
+        <div class="info-box">
+            <p>
+                <strong>Selectores de atributo usados:</strong><br>
+                <code>input[type="text"]</code> - Inputs de texto con borde gris<br>
+                <code>input[type="email"]</code> - Inputs de email con borde azul<br>
+                <code>input[type="submit"]</code> - Botón verde de envío
+            </p>
+        </div>
+
+        <!-- Sección 4: Botones con clases -->
+        <h2>4. Botones con Clases Combinadas</h2>
+
+        <p>Ejemplos de combinación de clases:</p>
+
+        <a href="#" class="btn btn-primary">Botón Primario</a>
+        <a href="#" class="btn btn-secondary">Botón Secundario</a>
+
+        <div class="success-box" style="margin-top: 20px;">
+            <p>
+                <strong>Conceptos aplicados:</strong>
+            </p>
+            <ul>
+                <li>Clase base <code>.btn</code> con estilos comunes</li>
+                <li>Clases modificadoras <code>.btn-primary</code> y <code>.btn-secondary</code></li>
+                <li>Efectos hover con <code>:hover</code></li>
+                <li>Transiciones suaves con <code>transition</code></li>
+            </ul>
+        </div>
+
+        <!-- Resumen final -->
+        <h2>📚 Resumen de Selectores</h2>
+
+        <ul>
+            <li><strong>Elemento:</strong> <code>p { }</code> - Selecciona todos los párrafos</li>
+            <li><strong>Clase:</strong> <code>.nombre { }</code> - Selecciona elementos con esa clase</li>
+            <li><strong>ID:</strong> <code>#nombre { }</code> - Selecciona el elemento con ese ID</li>
+            <li><strong>Descendente:</strong> <code>div p { }</code> - Párrafos dentro de divs</li>
+            <li><strong>Hijo directo:</strong> <code>div > p { }</code> - Solo hijos directos</li>
+            <li><strong>Atributo:</strong> <code>input[type="text"] { }</code> - Por atributo</li>
+            <li><strong>Múltiple:</strong> <code>h1, h2, h3 { }</code> - Varios elementos</li>
+            <li><strong>Combinado:</strong> <code>#container .clase { }</code> - Combinación</li>
+        </ul>
+
+        <footer>
+            <p>
+                💡 <strong>Tip:</strong> Practica combinando diferentes selectores para 
+                lograr estilos más específicos y mantener tu CSS organizado.
+            </p>
+            <p>&copy; 2025 - Ejercicio de Selectores CSS</p>
+        </footer>
+    </div>
+</body>
+</html>
+

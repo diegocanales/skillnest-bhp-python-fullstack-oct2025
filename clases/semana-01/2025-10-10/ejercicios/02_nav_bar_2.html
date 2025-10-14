@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .navbar {
+            height: 100px;
+            background-color: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+        }
+
+        .links {
+            color: rgb(250, 250, 250);
+            margin: 20px;
+        }
+
+        #logo {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            margin: 20px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        #logo {
+            transition: transform 0.3s ease;
+        }
+
+        #logo:hover {
+            transform: scale(1.05);  /* Zoom al pasar el mouse */
+        }
+
+        /* .nav-links > li{
+            transition: transform 0.3s ease;
+        }
+
+        .nav-links > li:hover{
+          transform: scale(1.05);
+        } */
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;  /* Transición suave */
+        }
+
+        .nav-links a:hover {
+            color: #FFD700;  /* Dorado al hover */
+        }
+
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#">
+            <img id="logo" src="https://placehold.co/400" alt="Logo">
+        </a>
+        <ul class="nav-links">
+            <li><a class="contact-link" href="#">Inicio</a></li>
+            <li><a class="contact-link" href="#">Servicios</a></li>
+            <li><a class="contact-link" href="#">Nosotros</a></li>
+            <li><a class="contact-link" href="#">Contacto</a></li>
+        </ul>
+    </nav>
+    
+</body>
+</html>
