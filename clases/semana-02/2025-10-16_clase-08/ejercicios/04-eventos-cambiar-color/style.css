@@ -1,0 +1,92 @@
+/* 
+Reset básico de estilos 
+Elimina márgenes y padding predeterminados del navegador
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos del body */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    /* Transición suave al cambiar el color de fondo */
+    transition: background-color 0.5s ease;
+    /* Color inicial */
+    background-color: #f0f0f0;
+    /* Altura completa de la ventana */
+    min-height: 100vh;
+    /* Centrar contenido verticalmente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Contenedor principal */
+.contenedor {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos del título */
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+/* Estilos del párrafo */
+p {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+/* Estilos del botón */
+button {
+    /* Espaciado interno */
+    padding: 15px 30px;
+    /* Tamaño de fuente */
+    font-size: 18px;
+    /* Color de fondo */
+    background-color: dodgerblue;
+    /* Color del texto */
+    color: white;
+    /* Sin borde */
+    border: none;
+    /* Cursor de mano al pasar el mouse */
+    cursor: pointer;
+    /* Espacio superior */
+    margin-top: 20px;
+    /* Esquinas redondeadas */
+    border-radius: 5px;
+    /* Sin outline al hacer clic */
+    outline: none;
+    /* Transición suave */
+    transition: all 0.3s ease;
+    /* Fuente en negrita */
+    font-weight: bold;
+}
+
+/* Efecto hover en el botón */
+button:hover {
+    background-color: #1e7ed4;
+    transform: scale(1.05);
+}
+
+/* Efecto al hacer clic en el botón */
+button:active {
+    transform: scale(0.95);
+}
+
+/* Información adicional */
+.info {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 30px;
+}
+

@@ -1,0 +1,73 @@
+<!--
+Ejercicio 6: This e innerText - Cambiar Texto de Botones
+
+Objetivo:
+Practicar el uso de "this" para manipular el elemento que recibió el evento.
+Usar la propiedad innerText para cambiar el contenido de elementos.
+Entender cómo this referencia al elemento específico clickeado.
+
+Descripción:
+Crear una página con varios botones. Al hacer clic en cada botón,
+cambia su propio texto usando "this.innerText".
+
+Habilidades que se practican:
+- Usar "this" en eventos
+- Modificar texto con innerText
+- Agregar eventos a múltiples elementos
+- Manipular el contenido de elementos HTML
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar Texto con This</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>✨ Botones Mágicos</h1>
+        <p>Haz clic en cada botón para ver qué pasa</p>
+        
+        <div class="grid-botones">
+            <!-- Botón 1: Saludo -->
+            <button class="boton-magico" data-mensaje="¡Hola! 👋">
+                Saluda
+            </button>
+            
+            <!-- Botón 2: Hora -->
+            <button class="boton-magico hora">
+                ¿Qué hora es?
+            </button>
+            
+            <!-- Botón 3: Contador -->
+            <button class="boton-magico contador">
+                Contador: 0
+            </button>
+            
+            <!-- Botón 4: Color aleatorio -->
+            <button class="boton-magico color">
+                Cambiar mi color
+            </button>
+            
+            <!-- Botón 5: Like -->
+            <button class="boton-magico like">
+                ❤️ 0 Likes
+            </button>
+            
+            <!-- Botón 6: Reset -->
+            <button class="boton-magico reset">
+                ¿Clickeado? No
+            </button>
+        </div>
+        
+        <div class="info">
+            <p>💡 Cada botón tiene un comportamiento diferente</p>
+            <p>🎯 Todos usan "this" para referenciarse a sí mismos</p>
+        </div>
+    </div>
+</body>
+</html>
+

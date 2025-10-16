@@ -1,0 +1,41 @@
+<!--
+Ejercicio 4: Eventos - Cambiar Color de Fondo
+
+Objetivo:
+Aprender a manejar eventos de click en JavaScript.
+Practicar la conexión entre HTML, CSS y JavaScript.
+Entender cómo modificar estilos con JavaScript.
+
+Descripción:
+Crear una página web con un botón que cambia el color de fondo
+del body cada vez que se hace clic. El color se elige aleatoriamente
+de una lista predefinida.
+
+Habilidades que se practican:
+- Usar addEventListener para eventos de click
+- Seleccionar elementos con getElementById
+- Modificar estilos CSS con JavaScript
+- Usar Math.random() para generar números aleatorios
+- Conectar archivos HTML, CSS y JavaScript
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambia el Color de Fondo</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- defer hace que el script se cargue después del HTML -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>🎨 Cambiador de Color de Fondo</h1>
+        <p>Haz clic en el botón para cambiar el color de fondo de la página</p>
+        <button id="colorButton">¡Cambia el color!</button>
+        <p class="info">Colores disponibles: Tomate, Verde Claro, Púrpura, Dorado, Azul Acero, Salmón</p>
+    </div>
+</body>
+</html>
+

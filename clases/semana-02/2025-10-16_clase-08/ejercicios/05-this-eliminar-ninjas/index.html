@@ -1,0 +1,66 @@
+<!--
+Ejercicio 5: This - Eliminar Ninjas
+
+Objetivo:
+Aprender a usar "this" para referenciar el elemento que recibió el evento.
+Practicar querySelectorAll para seleccionar múltiples elementos.
+Usar el método forEach para iterar sobre elementos.
+Entender cómo eliminar elementos del DOM con remove().
+
+Descripción:
+Crear una página con varios ninjas. Al hacer clic en un ninja,
+ese ninja específico desaparece usando "this" para referenciarlo.
+
+Habilidades que se practican:
+- Usar querySelectorAll para seleccionar múltiples elementos
+- Iterar con forEach
+- Agregar eventos a múltiples elementos
+- Usar "this" en el contexto de eventos
+- Eliminar elementos del DOM con remove()
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar Ninjas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Dojo de Ninjas</h1>
+        <p>Haz clic en un ninja para hacerlo desaparecer</p>
+        
+        <div id="dojo">
+            <!-- Ninja Negro -->
+            <div class="ninja">
+                <img src="images/black.png" alt="Ninja Negro" class="ninja-img">
+                <p>Ninja Negro</p>
+            </div>
+            
+            <!-- Ninja Azul -->
+            <div class="ninja">
+                <img src="images/blue.png" alt="Ninja Azul" class="ninja-img">
+                <p>Ninja Azul</p>
+            </div>
+            
+            <!-- Ninja Verde -->
+            <div class="ninja">
+                <img src="images/green.png" alt="Ninja Verde" class="ninja-img">
+                <p>Ninja Verde</p>
+            </div>
+            
+            <!-- Ninja Rojo -->
+            <div class="ninja">
+                <img src="images/red.png" alt="Ninja Rojo" class="ninja-img">
+                <p>Ninja Rojo</p>
+            </div>
+        </div>
+        
+        <p class="info">💡 Pista: Cada ninja desaparece cuando haces clic en él</p>
+    </div>
+</body>
+</html>
+
