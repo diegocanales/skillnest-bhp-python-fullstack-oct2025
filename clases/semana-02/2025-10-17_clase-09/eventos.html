@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Ejemplo mostrar mensaje alerta</h2>
+    <button onclick="mostrarMensaje()">Haz click acá</button>
+
+    <h2>Ejemplo contador de clicks</h2>
+    <p>Haz hecho clic <span id="contador">0</span></p>
+    <button onclick="incrementar()">Contador</button>
+
+    <h2>Ejemplo this</h2>
+    <button onclick="cambiarColor(this)">Cambiame el color</button>
+
+    <script>
+        function mostrarMensaje() {
+            alert("Hiciste click al botón!")
+            console.log("Hicimos click!")
+        }
+
+        var clics = 0;
+        function incrementar(){
+            clics = clics + 1 // clics++
+            console.log("Clics: "+ clics)
+            document.getElementById("contador").innerText = clics
+        }
+
+        function cambiarColor(elemento) {
+            elemento.style.backgroundColor = "red";
+            elemento.innerText = "Me cambiaste el color!"
+        }
+
+    </script>
+</body>
+
+</html>
