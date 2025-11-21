@@ -1,4 +1,8 @@
 from flask_app.config.mysqlconnection import connectToMySQL
+import re
+from flask import flash
+
+EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 
 class Usuario:
     def __init__(self, data):
@@ -68,9 +72,17 @@ class Usuario:
         }
 
         return connectToMySQL("tienda").query_db(query, datos)
-
-
     
+    @staticmethod
+    def validar_usuario(datos: dict) -> bool:
+        es_valido = True
+        # TODO: implementar validaciones
 
+        if len(datos["email"].strip()) == 0:
+            flash("El email es obligatorio", "email")
+            es_valido = False
+        elif not EMAIL_REGEX.match(datos["email"]):
+            flash("Email inválido. Debe tener el formato (ejemplo@dominio.com)", "email")
+            es_valido = False
 
-
+        return es_valido

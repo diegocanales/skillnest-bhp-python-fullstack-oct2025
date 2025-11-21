@@ -1,4 +1,4 @@
-from flask import render_template, request, redirect
+from flask import render_template, request, redirect, session
 from flask_app.models.usuario import Usuario
 from flask_app import app
 
@@ -23,17 +23,19 @@ def nuevo_usuario():
 
 @app.route("/usuarios/crear", methods=["POST"])
 def crear_usuario():
-    nombre = request.form["nombre"]
-    apellido = request.form["apellido"]
-    email = request.form["email"]
-    edad = int(request.form["edad"])
+    session["form_data"] = request.form.to_dict()
 
     data = {
-        "nombre": nombre,
-        "apellido": apellido,
-        "email": email,
-        "edad": edad
+        "nombre": request.form["nombre"],
+        "apellido": request.form["apellido"],
+        "email": request.form["email"],
+        "edad": int(request.form["edad"])
     }
+
+    if not Usuario.validar_usuario(data):
+        return redirect("/usuarios/nuevo")
+
+    session.pop('form_data', None)
     id_nuevo_usuario = Usuario.save(datos=data)
     
     return redirect("/usuarios")
