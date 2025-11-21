@@ -10,7 +10,18 @@
 <body>
     <a href="/tacos" class="btn btn-success">Ver todos los tacos</a>
     <form action="/crear" method="post" class="p-3 col-4 mx-auto my-5b border">
+
         <h2 class="text-center text-primary">Crear Taco:</h2>
+
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                <div class="alert alert-danger" role="alert">
+                    {{ message }}
+                </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
     
         <div class="form-group">
             <label for="tortilla">Tortilla:</label>

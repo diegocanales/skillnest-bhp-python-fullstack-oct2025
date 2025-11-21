@@ -18,8 +18,9 @@ def crear():
         "restaurante_id": request.form['restaurante_id']
     }
 
+    print(f"datos formulario {datos}")
     if not Taco.validar_taco(datos): # Si los datos recibidos del formulario para crear el objeto Taco no es válido
-        redirect("/") # Hacemos un redirect a la ruta que contiene al formulario
+        return redirect("/") # Hacemos un redirect a la ruta que contiene al formulario
 
     # Si es válido se ejecuta lo siguiente
     Taco.save(datos)
@@ -61,6 +62,10 @@ def actualizar(taco_id):
         "guiso": request.form['guiso'],
         "salsa": request.form['salsa']
     }
+
+    if not Taco.validar_taco(datos): # Si los datos recibidos del formulario para crear el objeto Taco no es válido
+        return redirect(f"/editar/{taco_id}") # Hacemos un redirect a la ruta que contiene al formulario
+
     Taco.update(datos)
     return redirect(f"/mostrar/{taco_id}")
 

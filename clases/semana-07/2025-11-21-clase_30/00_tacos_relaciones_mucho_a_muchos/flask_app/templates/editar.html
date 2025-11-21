@@ -12,12 +12,11 @@
         <h2 class="text-center text-primary">Editar taco {{taco['id']}}:</h2>
         {% with messages = get_flashed_messages() %}
             {% if messages %}
-            <div class="alert alert-danger" role="alert">
-                <strong>Mensajes FLASH AHHHHHHH!!!!</strong>
-                    {% for message in messages %}
-                    <p>{{message}}</p>
-                    {% endfor %}
-            </div>
+                {% for message in messages %}
+                <div class="alert alert-danger" role="alert">
+                    {{ message }}
+                </div>
+                {% endfor %}
             {% endif %}
         {% endwith %}
         <div class="form-group">

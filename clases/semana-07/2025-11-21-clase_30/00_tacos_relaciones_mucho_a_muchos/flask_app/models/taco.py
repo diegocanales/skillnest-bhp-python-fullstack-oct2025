@@ -82,15 +82,20 @@ class Taco:
 
         if len(datos["tortilla"]) < 3: # Si el campo tortilla tiene menos de 3 caracteres
             flash("La tortilla debe tener al menos 3 caracteres")
+            print("[ERROR]: La tortilla debe tener al menos 3 caracteres")
             es_valido = False
-        
+
+
         if len(datos["guiso"]) < 3:
             flash("El guiso debe tener al menos 3 caracteres")
+            print("[ERROR]: El guiso debe tener al menos 3 caracteres")
             es_valido = False
         
         if len(datos["salsa"]) < 3:
             flash("El salsa debe tener al menos 3 caracteres")
+            print("[ERROR]: El salsa debe tener al menos 3 caracteres")
             es_valido = False
 
+        print(f"valor es_valido: {es_valido}")
 
         return es_valido
