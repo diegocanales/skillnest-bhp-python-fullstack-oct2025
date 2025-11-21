@@ -74,3 +74,23 @@ class Taco:
                 complemento_auxiliar = complemento.Complemento(datos_complementos)
                 taco.complementos.append(complemento_auxiliar)
         return taco
+
+    @staticmethod
+    def validar_taco(datos: dict) -> bool:
+        es_valido = True
+
+        # TODO: implementar validaciones
+        if len(datos["tortilla"]) < 3:
+            # TODO: hay que avisar al usuario
+            es_valido = False
+        
+        if len(datos["guiso"]) < 3:
+            # TODO: hay que avisar al usuario
+            es_valido = False
+        
+        if len(datos["salsa"]) < 3:
+            # TODO: hay que avisar al usuario
+            es_valido = False
+
+
+        return es_valido
