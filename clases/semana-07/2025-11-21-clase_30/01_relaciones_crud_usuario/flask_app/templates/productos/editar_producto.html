@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Editar un producto</h2>
+
+    <form action="/productos/actualizar" method="POST">
+
+        <input type="hidden" name="id" value="{{ producto.id }}">
+        <label>Nombre:</label>
+        <input type="text" name="nombre" value="{{ producto.nombre }}"><br>
+
+        <label>Categoria:</label>
+        <input type="number" name="categoria_id" value="{{ producto.categoria_id }}"><br>
+
+        <label>Descripcion:</label>
+        <input type="text" name="descripcion" value="{{ producto.descripcion }}"><br>
+
+        <label>Precio:</label>
+        <input type="number" name="precio" value="{{ producto.precio }}"><br>
+
+        <input type="submit" value="Actualizar producto">
+    </form>
+    
+</body>
+</html>

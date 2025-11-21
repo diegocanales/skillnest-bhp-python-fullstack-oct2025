@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> {{ restaurante.nombre }} </h1>
+
+    {% for taco in restaurante.tacos %}
+        <p> {{ taco.tortilla }} - {{ taco.guiso }} - {{ taco.salsa }} </p>
+    {% endfor %}
+</body>
+</html>

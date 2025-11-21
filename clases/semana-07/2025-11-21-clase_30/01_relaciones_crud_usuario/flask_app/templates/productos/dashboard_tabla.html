@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos</title>
+</head>
+<body>
+    <table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Categoria ID</th>
+            <th>Descripcion</th>
+            <th>Fecha Creación</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for producto in productos %}
+        <tr>
+            <td>{{ producto.id }}</td>
+            <td>{{ producto.nombre }}</td>
+            <td>{{ producto.precio }}</td>
+            <td>{{ producto.categoria_id }}</td>
+            <td>{{ producto.descripcion }}</td>
+            <td>{{ producto.created_at }}</td>
+            <td>
+                <a href="/productos/{{producto.id}}">Ver</a> | 
+                <a href="/productos/editar/{{producto.id}}">Editar</a> | 
+                <form action="/productos/eliminar/{{producto.id}}" method="POST" style="display: inline;">
+                    <input type="submit" value="Eliminar" onclick="return confirm('¿Estás seguro?');">
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
