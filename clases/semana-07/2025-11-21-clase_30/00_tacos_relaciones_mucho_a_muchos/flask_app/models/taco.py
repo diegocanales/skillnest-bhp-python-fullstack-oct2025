@@ -1,5 +1,6 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask_app.models import complemento
+from flask import flash
 
 class Taco:
     def __init__(self, data):
@@ -79,17 +80,16 @@ class Taco:
     def validar_taco(datos: dict) -> bool:
         es_valido = True
 
-        # TODO: implementar validaciones
-        if len(datos["tortilla"]) < 3:
-            # TODO: hay que avisar al usuario
+        if len(datos["tortilla"]) < 3: # Si el campo tortilla tiene menos de 3 caracteres
+            flash("La tortilla debe tener al menos 3 caracteres")
             es_valido = False
         
         if len(datos["guiso"]) < 3:
-            # TODO: hay que avisar al usuario
+            flash("El guiso debe tener al menos 3 caracteres")
             es_valido = False
         
         if len(datos["salsa"]) < 3:
-            # TODO: hay que avisar al usuario
+            flash("El salsa debe tener al menos 3 caracteres")
             es_valido = False
 
 
