@@ -73,6 +73,19 @@ class Usuario:
 
         return connectToMySQL("tienda").query_db(query, datos)
     
+
+    @classmethod
+    def buscar_por_emails(cls, email):
+        datos = {
+            "email": email
+        }
+        query = "SELECT * FROM usuarios WHERE email = %(email)s"
+        resultado = connectToMySQL("tienda").query_db(query, datos)
+
+        if len(resultado) > 0:
+            return cls(resultado[0])
+        return None
+
     @staticmethod
     def validar_usuario(datos: dict) -> bool:
         es_valido = True
@@ -84,5 +97,8 @@ class Usuario:
         elif not EMAIL_REGEX.match(datos["email"]):
             flash("Email inválido. Debe tener el formato (ejemplo@dominio.com)", "email")
             es_valido = False
-
+        
+        elif Usuario.buscar_por_emails(datos["email"]):
+            flash("Este usuario ya está registrado", "email")
+            es_valido = False
         return es_valido
