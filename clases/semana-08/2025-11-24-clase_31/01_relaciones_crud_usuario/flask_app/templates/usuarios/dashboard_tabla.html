@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos</title>
+</head>
+<body>
+    <table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre Completo</th>
+            <th>E-mail</th>
+            <th>Edad</th>
+            <th>Fecha Creación</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for usuario in usuarios %}
+        <tr>
+            <td>{{ usuario.id }}</td>
+            <td>{{ usuario.nombre }} {{ usuario.apellido }}</td>
+            <td>{{ usuario.email }}</td>
+            <td>{{ usuario.edad }}</td>
+            <td>{{ usuario.created_at }}</td>
+            <td>
+                <a href="/usuarios/{{usuario.id}}">Ver</a> | 
+                <a href="/usuarios/editar/{{usuario.id}}">Editar</a> | 
+                <form action="/usuarios/eliminar/{{usuario.id}}" method="POST" style="display: inline;">
+                    <input type="submit" value="Eliminar" onclick="return confirm('¿Estás seguro?');">
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
