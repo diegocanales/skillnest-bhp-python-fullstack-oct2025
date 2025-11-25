@@ -1,5 +1,5 @@
 from flask_app import app
-# TODO: importar módulos de controladores
+from flask_app.controllers import eventos
 
 if __name__ == "__main__":
     app.run(debug=True)
