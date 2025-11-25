@@ -9,6 +9,7 @@ class Usuario:
         self.id = data["id"]
         self.nombre = data["nombre"]
         self.apellido = data["apellido"]
+        self.password = data.get("password", "")
         self.email = data["email"]
         self.edad = data["edad"]
         self.created_at = data["created_at"]
@@ -109,7 +110,7 @@ class Usuario:
 
         # TODO: implementar validaciones
 
-        if len(data.get("password", "").strip) < 8:
+        if len(data.get("password", "").strip()) < 8:
             flash("La contraseña debe tener al menos 8 caracteres", "password")
             es_valido = False
         
@@ -117,5 +118,5 @@ class Usuario:
             flash("Las contraseñas no coinciden", "password")
             es_valido = False
         
-        return False
+        return es_valido
 
