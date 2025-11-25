@@ -85,6 +85,11 @@ def logout():
 
 @app.route("/usuarios")
 def mostrar_usuarios():
+    # Esto es para proteger las vistas, revisando si existe un usuario en la session
+    if "usuario_id" not in session: # Si no hay id de usuario en la session
+        flash("Debes iniciar sesión para acceder", "error")
+        return redirect("/")
+
     usuarios = Usuario.get_all()
     return render_template("usuarios/dashboard_tabla.html", usuarios=usuarios)
 

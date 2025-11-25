@@ -45,11 +45,18 @@ class Usuario:
     
     @classmethod
     def save(cls, datos):
-        query = """
-            INSERT INTO usuarios
-            (nombre, apellido, email, edad)
-            VALUES (%(nombre)s, %(apellido)s, %(email)s, %(edad)s)
-        """
+        if "password" in datos and datos["password"]:
+            query = """
+                INSERT INTO usuarios
+                (nombre, apellido, email, edad, password)
+                VALUES (%(nombre)s, %(apellido)s, %(email)s, %(edad)s, %(password)s)
+            """
+        else:
+            query = """
+                INSERT INTO usuarios
+                (nombre, apellido, email, edad)
+                VALUES (%(nombre)s, %(apellido)s, %(email)s, %(edad)s)
+            """
         nuevo_id = connectToMySQL('tienda').query_db(query, datos)
         return nuevo_id
     
