@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Bienvenido, {{ usuario.nombre }} {{ usuario.apellido }}!</h1>
+    <p>Email: {{ usuario.email }}</p>
+    
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    
+    <form action="/usuarios/logout" method="POST">
+        <button type="submit">Cerrar Sesión</button>
+    </form>
+</body>
+</html>

@@ -75,7 +75,7 @@ class Usuario:
     
 
     @classmethod
-    def buscar_por_emails(cls, email):
+    def buscar_por_email(cls, email):
         datos = {
             "email": email
         }
@@ -98,7 +98,24 @@ class Usuario:
             flash("Email inválido. Debe tener el formato (ejemplo@dominio.com)", "email")
             es_valido = False
         
-        elif Usuario.buscar_por_emails(datos["email"]):
+        elif Usuario.buscar_por_email(datos["email"]):
             flash("Este usuario ya está registrado", "email")
             es_valido = False
         return es_valido
+    
+    @staticmethod
+    def validar_registro(data):
+        es_valido = True
+
+        # TODO: implementar validaciones
+
+        if len(data.get("password", "").strip) < 8:
+            flash("La contraseña debe tener al menos 8 caracteres", "password")
+            es_valido = False
+        
+        if data["password"] != data["confirm_password"]:
+            flash("Las contraseñas no coinciden", "password")
+            es_valido = False
+        
+        return False
+
