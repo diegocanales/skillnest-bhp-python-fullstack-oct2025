@@ -18,8 +18,8 @@ class Evento:
         # self.usuario -> Usuario
         # self.usuario -> dict
 
-        # self.usuario_nombre -> string
-        # self.usuario_apellido -> string
+        self.usuario_nombre = data.get("usuario_nombre", "")
+        self.usuario_apellido = data.get("usuario_apellido", "")
  
 
     @classmethod
@@ -50,7 +50,15 @@ class Evento:
         pass
 
     @classmethod
-    def get_evento_y_usuario(cls, data):
-        pass
+    def get_evento_y_usuario(cls, data): # Un evento y con el campo de usuario_nombre y usuario_apellido llenados
+        query = """
+        SELECT * FROM eventos
+        LEFT JOIN usuarios ON eventos.usuario_id = usuarios.id
+        WHERE eventos.id = %(id)s;
+        """
+        resultados = connectToMySQL('esquema_eventos').query_db(query, data)
+        evento = cls(data)
+
+
 
 

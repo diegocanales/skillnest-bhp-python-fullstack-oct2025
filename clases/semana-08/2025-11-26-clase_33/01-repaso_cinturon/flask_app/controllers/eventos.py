@@ -1,5 +1,6 @@
 from flask_app import app
 from flask import render_template
+from flask_app.models.evento import Evento
 
 @app.route("/")
 def index():
@@ -10,7 +11,7 @@ def index():
 @app.route("/eventos")
 def mostrar_eventos():
     # TODO: hay que hacer algo
-    todos_los_eventos = []
+    todos_los_eventos = Evento.get_all()
     return render_template("eventos.html", eventos=todos_los_eventos)
 
 
