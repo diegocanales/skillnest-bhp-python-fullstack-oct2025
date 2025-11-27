@@ -11,7 +11,7 @@ def index():
 @app.route("/eventos")
 def mostrar_eventos():
     # TODO: hay que hacer algo
-    todos_los_eventos = Evento.get_all()
+    todos_los_eventos = Evento.get_all_eventos_y_usuarios()
     return render_template("eventos.html", eventos=todos_los_eventos)
 
 
