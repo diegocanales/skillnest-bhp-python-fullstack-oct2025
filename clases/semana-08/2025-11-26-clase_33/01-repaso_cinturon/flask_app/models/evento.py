@@ -57,8 +57,35 @@ class Evento:
         WHERE eventos.id = %(id)s;
         """
         resultados = connectToMySQL('esquema_eventos').query_db(query, data)
-        evento = cls(data)
+        evento = cls(resultados[0])
 
+        evento.usuario_nombre = resultados[0]["nombre"]
+        evento.usuario_apellido = resultados[0]["apellido"]
 
+        return evento
+    
+    @classmethod
+    def get_all_eventos_y_usuarios(cls):
+        query = """
+        SELECT * FROM eventos
+        LEFT JOIN usuarios ON eventos.usuario_id = usuarios.id;
+        """
+        resultados = connectToMySQL('esquema_eventos').query_db(query)
+        eventos = []
+        for fila_en_db in resultados:
+            data_evento = {
+                "id": fila_en_db["id"],
+                "evento": fila_en_db["evento"],
+                "ubicacion": fila_en_db["ubicacion"],
+                "fecha": fila_en_db["fecha"],
+                "detalles": fila_en_db["detalles"],
+                "usuario_id": fila_en_db["usuario_id"],
+                "created_at": fila_en_db["created_at"],
+                "updated_at": fila_en_db["updated_at"],
+            }
+            evento = cls(data=data_evento)
+            evento.usuario_nombre = fila_en_db["nombre"]
+            evento.usuario_apellido = fila_en_db["apellido"]
 
-
+            eventos.append(evento)
+        return eventos
