@@ -6,6 +6,35 @@
     <title>Editar Evento</title>
 </head>
 <body>
+
+    <h1>Evento</h1>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <form action="/eventos/actualizar" method="POST">
+
+        <input type="hidden" name="id" value="{{evento.id}}"><br>
+
+        <label>Nombre Evento:</label>
+        <input type="text" name="evento" value="{{evento.evento}}"><br>
+
+        <label>Ubicación:</label>
+        <input type="text" name="ubicacion" value="{{evento.ubicacion}}"><br>
+
+        <label>Fecha:</label>
+        <input type="date" name="fecha" value="{{evento.fecha}}"><br>
+
+        <label>Detalles:</label>
+        <textarea name="detalles" rows="4" cols="50">{{evento.detalles}}</textarea><br>
+
+        <input type="submit" value="Guardar Evento">
+    </form>
     
 </body>
 </html>

@@ -9,6 +9,14 @@
 
 <body>
 
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
     <table>
         <thead>
             <tr>
@@ -27,10 +35,10 @@
                 <td>{{ evento.fecha }}</td>
                 <td>{{ evento.usuario_nombre }}</td>
                 <td>
-                    <a href="/eventos/{{evento.id}}">Ver</a> |
+                    <a href="/ver/{{evento.id}}">Ver</a> |
                     <!-- TODO: implementar mostrar botones de editar y eliminar solo si el usuario de la sesion creo el evento -->
-                    <a href="/eventos/editar/{{evento.id}}">Editar</a> |
-                    <form action="/eventos/eliminar/{{evento.id}}" method="POST" style="display: inline;">
+                    <a href="/editar/{{evento.id}}">Editar</a> |
+                    <form action="/eliminar/{{evento.id}}" method="POST" style="display: inline;">
                         <input type="submit" value="Eliminar" onclick="return confirm('¿Estás seguro?');">
                     </form>
                 </td>

@@ -3,9 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuevo Evento</title>
+    <title>Evento nuevo</title>
 </head>
 <body>
+
+    <h1>Evento</h1>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <form action="/eventos/crear" method="POST">
+        <label>Nombre Evento:</label>
+        <input type="text" name="evento" value=""><br>
+
+        <label>Ubicación:</label>
+        <input type="text" name="ubicacion" value=""><br>
+
+        <label>Fecha:</label>
+        <input type="date" name="fecha" value=""><br>
+
+        <label>Detalles:</label>
+        <textarea name="detalles" rows="4" cols="50"></textarea><br>
+
+        <input type="submit" value="Guardar Evento">
+    </form>
+    
     
 </body>
 </html>

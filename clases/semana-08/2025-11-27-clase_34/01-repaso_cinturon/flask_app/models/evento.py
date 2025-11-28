@@ -1,5 +1,6 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 
+
 class Evento:
     def __init__(self, data):
         
@@ -35,19 +36,44 @@ class Evento:
 
     @classmethod
     def get_one(cls, id):
-        pass
+        data = {"id": id}
+        query = "SELECT * FROM eventos WHERE id = %(id)s"
+        resultado = connectToMySQL("esquema_eventos").query_db(query, data)
+        if resultado:
+            return cls(resultado[0])
+        return False
 
     @classmethod
-    def update(cls, data):
-        pass
+    def update(cls, datos):
+        query = """
+            UPDATE eventos
+            SET evento = %(evento)s,
+                ubicacion = %(ubicacion)s,
+                fecha = %(fecha)s,
+                detalles = %(detalles)s,
+                usuario_id = %(usuario_id)s
+            WHERE id = %(id)s;
+        """
+        return connectToMySQL('esquema_eventos').query_db(query, datos)
 
     @classmethod
     def delete(cls, id):
-        pass
+        query = "DELETE FROM eventos WHERE id = %(id)s"
+        datos = {
+            "id": id
+        }
+        return connectToMySQL("esquema_eventos").query_db(query, datos)
 
     @classmethod
     def save(cls, data):
-        pass
+        query = """
+            INSERT INTO eventos
+            (evento, ubicacion, fecha, detalles, usuario_id)
+            VALUES (%(evento)s, %(ubicacion)s, %(fecha)s, %(detalles)s, %(usuario_id)s)
+        """
+        nuevo_id = connectToMySQL('esquema_eventos').query_db(query, data)
+        return nuevo_id
+        
 
     @classmethod
     def get_evento_y_usuario(cls, data): # Un evento y con el campo de usuario_nombre y usuario_apellido llenados
@@ -57,6 +83,9 @@ class Evento:
         WHERE eventos.id = %(id)s;
         """
         resultados = connectToMySQL('esquema_eventos').query_db(query, data)
+        if resultados == ():
+            return None
+
         evento = cls(resultados[0])
 
         evento.usuario_nombre = resultados[0]["nombre"]
