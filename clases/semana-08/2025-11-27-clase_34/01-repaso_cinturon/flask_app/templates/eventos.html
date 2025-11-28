@@ -9,6 +9,10 @@
 
 <body>
 
+    <form action="/usuarios/logout" method="POST">
+        <button type="submit">Cerrar Sesión</button>
+    </form>
+
     {% with messages = get_flashed_messages() %}
         {% if messages %}
             {% for message in messages %}
