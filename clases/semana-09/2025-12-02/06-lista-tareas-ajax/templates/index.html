@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tareas AJAX</title>
+</head>
+<body>
+    <div class="container">
+        <h1> Mi Lista de Tareas</h1>
+        <p class="subtitle">Con Flask y AJAX - Sin recargar la página</p>
+
+        <!-- Botón para cargar tareas -->
+        <button onclick="cargarTareas()" class="btn-primary">
+            Cargar Tareas
+        </button>
+
+        <!-- Contenedor donde se mostrarán las tareas -->
+        <div id="tareas">
+            <p class="mensaje-inicial">Haz clic en "Cargar Tareas" para ver tu lista</p>
+        </div>
+
+        <!-- Formulario para agregar nueva tarea -->
+        <div class="form-section">
+            <h2>Agregar Nueva Tarea</h2>
+            <form id="formularioTarea" onsubmit="agregarTarea(event)">
+                <input type="text" 
+                       name="tarea" 
+                       placeholder="Ej: Estudiar JavaScript..." 
+                       required>
+                <button type="submit" class="btn-success">Agregar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
+
