@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuario aleatorio con Fetch</title>
+</head>
+<body>
+
+<h2>Obtener usuario aleatorio</h2>
+
+<button id="btn">Obtener usuario</button>
+
+<div id="resultado" style="margin-top:20px; font-size:18px;"></div>
+
+<script>
+// Asociar evento al botón
+document.getElementById("btn").addEventListener("click", obtenerUsuario);
+
+function obtenerUsuario() {
+
+    // Generar ID aleatorio entre 1 y 10
+    const id = Math.floor(Math.random() * 10) + 1;
+
+    // Hacer la petición fetch
+    fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+        .then(res => res.json())
+        .then(usuario => {
+
+            document.getElementById("resultado").innerHTML = `
+                <strong>ID:</strong> ${usuario.id} <br>
+                <strong>Nombre:</strong> ${usuario.name} <br>
+                <strong>Usuario:</strong> ${usuario.username} <br>
+                <strong>Email:</strong> ${usuario.email} <br>
+                <strong>Ciudad:</strong> ${usuario.address.city}
+            `;
+        })
+        .catch(err => {
+            document.getElementById("resultado").innerHTML =
+                "Ocurrió un error: " + err;
+        });
+}
+</script>
+
+</body>
+</html>
