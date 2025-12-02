@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!--TODO: cambiar datos -->
+    <p><strong>Organizador:</strong> {{ viaje.usuario_id }}</p>
+    <p><strong>Destino:</strong> {{ viaje.destino }}</p>
+    <p><strong>Fecha de Inicio:</strong> {{ viaje.fecha_inicio }}</p>
+    <p><strong>Fecha de Fin:</strong> {{ viaje.fecha_fin }}</p>
+    <hr>
+    <h5>Itinerario:</h5>
+    <p >{{ viaje.itinerario }}</p>
+
+    <!--Lista-->
+
+    <div>
+        <h5>Viajeros</h5>
+
+        <ul>
+            {% for usuario in viaje.viajeros %}
+            <li>{{ usuario.nombre }}</li>
+            {% endfor %}
+        </ul>
+
+        <form action="/usuario/unirse/{{ session['usuario_id'] }}/{{ viaje.id }}" method="POST">
+            <input type="submit" value="Unirse">
+        </form>
+    </div>
+    
+</body>
+</html>
